@@ -1,0 +1,24 @@
+/*
+Theme Name: Theme 31w
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://wordpress.org/
+Description: Thème de base qui nous permettra d'apprendre les rudiments de la création de thème
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: theme-31w
+*/
+
+@import "variables/couleurs";
+@import "normalize/normalize";
+
+/*--------------------------------------------- base  */
+@import "base/heading";
+@import "base/espacement";
+@import "base/lien";
+@import "base/list";
+
+/* --------------------------------------------- composant */
+@import "composant/entete";
