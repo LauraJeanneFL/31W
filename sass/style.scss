@@ -13,20 +13,16 @@ Text Domain: theme-31w
 /*--------------------------------------------- normalize */
 @import "normalize/normalize";
 
-
 /*--------------------------------------------- base  */
 @import "base/heading";
 // @import "base/espacement";
 // @import "base/lien";
 // @import "base/list";
 
-
 /* --------------------------------------------- composant */
 @import "composants/bloc";
 
-
 /*--------------------------------------------- layout  */
 @import "layout/page";
-
 
 // @import "variables/couleurs";
