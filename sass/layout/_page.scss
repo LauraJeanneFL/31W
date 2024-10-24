@@ -1,25 +1,14 @@
 .global {
-    display: flex;
-    flex-direction:column;
-    flex-basis: 1100px;
-    margin: 0 auto;
-    background-color: rgba(255,255,255, .05);
-    padding: 5px;
-}
-.entete {
-    background-color:burlywood;
+
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
 }
 
 .principal {
-    background-color: blanchedalmond;
+  background-color: blanchedalmond;
 }
 
 .pied {
-    background-color: burlywood;
-}
-
-.recherche{
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
+  background-color: burlywood;
 }

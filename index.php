@@ -8,7 +8,7 @@
 <?php get_header() ?>
 
   <main class="principal">
-    <h2>Liste de cours</h2>
+    <h2>Liste de cours - 3,2,1 colonnes </h2>
     <section class="global">
       
       <div class="principal__conteneur">

@@ -21,7 +21,9 @@
         display: block;
         color: black;
         text-decoration: none;
+        text-transform: uppercase;
         transition: color 0.4s ease;
+        padding: 10px;
 
         &:hover {
           color: red;

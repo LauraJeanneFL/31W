@@ -21,7 +21,9 @@ Text Domain: theme-31w
 
 /* --------------------------------------------- composant */
 @import "composants/bloc";
+@import "composants/entete";
 @import "composants/navigation";
+@import "composants/recherche";
 
 /*--------------------------------------------- layout  */
 @import "layout/page";
