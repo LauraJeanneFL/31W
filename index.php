@@ -6,6 +6,7 @@
  */
 ?>
 
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -45,6 +46,23 @@
         reiciendis totam natus temporibus. Saepe iste consectetur officia
         animi voluptatem laudantium ab hic inventore!
       </p>
+=======
+  <main class="principal">
+    <h2>Liste de cours - 3,2,1 colonnes </h2>
+    <section class="global">
+      
+      <div class="principal__conteneur">
+        <!--  requete de base qui est execute, extrait l'ensemble des articles par defaut, have_post = verifier qu'il y est un article -->
+        <?php if (have_posts()): ?>
+          <?php while (have_posts()): the_post(); ?>
+            <article class="principal__article">
+              <h5> <?php the_title() ?> </h5>
+              <h6> <?php the_content()?> </h6>
+            </article>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      </div>
+>>>>>>> Stashed changes
     </section>
   </main>
   <footer>

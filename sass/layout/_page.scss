@@ -1,0 +1,39 @@
+:root{
+    --$couleur1: #7a0808;
+    --$couleur2: #3f52c8;
+    --$couleur3: #ffcf9b;
+}
+
+html, body{
+    margin: 0;
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.global {
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+}
+
+/* .entete {
+    background-color:burlywood;
+} */
+ @include regle_couleur_back(".entete", $couleur1);
+
+.principal {
+  background-color: blanchedalmond;
+}
+
+.pied {
+  background-color: burlywood;
+}
+
+.global .pied__global{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
