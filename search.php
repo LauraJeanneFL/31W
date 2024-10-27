@@ -17,6 +17,8 @@
             
             <article class="principal__article">
               <h5> <a href="<?php the_permalink()?>"> <?php the_title() ?></a> </h5>
+              <h5> <?php the_title() ?> </h5>
+              <h6> <?php echo $titre ?> </h6>
               <p> <?php echo wp_trim_words( get_the_excerpt(), 20, null)?> </p>
             </article>
           <?php endwhile; ?>

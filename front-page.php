@@ -20,6 +20,7 @@
             $sigle = substr($chaine, 0, 7);
             $titre = substr($chaine, 8, strpos($chaine, "(")-8);
             $duree = '60h';
+
             ?>
             <article class="principal__article">
               <h5> <?php echo $sigle ?> </h5>
