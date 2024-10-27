@@ -10,6 +10,14 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: theme-31w
 */
+
+@import "variables/couleurs";
+
+/*--------------------------------------------- variables & mixin */
+@import "variables/couleurs";
+
+/*--------------------------------------------- normalize */
+
 /*--------------------------------------------- normalize */
 @import "normalize/normalize";
 
@@ -20,6 +28,9 @@ Text Domain: theme-31w
 // @import "base/list";
 
 /* --------------------------------------------- composant */
+
+@import "composant/entete";
+
 @import "composants/bloc";
 @import "composants/entete";
 @import "composants/navigation";
@@ -29,3 +40,4 @@ Text Domain: theme-31w
 @import "layout/page";
 
 // @import "variables/couleurs";
+

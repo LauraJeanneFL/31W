@@ -11,8 +11,36 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: theme-31w
 */
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: aquamarine;
+  }
+
+/*--------------------------------------------- variables & mixin */
 /*--------------------------------------------- normalize */
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document ===================================================================== */
+/*
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+
+/*--------------------------------------------- normalize */
+
 /* Document
    ========================================================================== */
 /**
@@ -23,6 +51,7 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
+
 
 /* Sections
    ========================================================================== */
@@ -326,6 +355,12 @@ h1 {
   font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
 }
 
+
+entete__titre h1 a {
+  color: rgb(255, 207, 155);
+  background-color: rgb(122, 8, 8);
+}
+
 h2 {
   font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
 }
@@ -356,6 +391,8 @@ h1 {
 
 h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 0;
+
 }
 
 h3,
@@ -485,10 +522,18 @@ p {
   padding: 5px;
 }
 
+
+.entete {
+  background-color: burlywood;
+}
+
+.entete {
+  background-color: rgb(122, 8, 8);
+}
+
 .principal {
   background-color: blanchedalmond;
 }
 
 .pied {
   background-color: burlywood;
-}/*# sourceMappingURL=style.css.map */

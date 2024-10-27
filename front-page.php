@@ -19,11 +19,14 @@
             $chaine = get_the_title();
             $sigle = substr($chaine, 0, 7);
             $titre = substr($chaine, 8, strpos($chaine, "(")-8);
+            $duree = '60h';
+
             ?>
             <article class="principal__article">
               <h5> <?php echo $sigle ?> </h5>
               <h6> <?php echo $titre ?> </h6>
               <p> <?php echo wp_trim_words( get_the_excerpt(), 20, null)?> </p>
+              <code><?php echo $duree ?></code>
             </article>
           <?php endwhile; ?>
         <?php endif; ?>

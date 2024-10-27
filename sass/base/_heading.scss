@@ -1,6 +1,17 @@
+
 h1 {
     font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
     }
+    @include regle_couleur_avant_arriere (
+        ". entete__titre h1 a", 
+        $couleur3, 
+        $couleur1
+    );
+
+h1 {
+    font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
+    }
+
     h2 {
     font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
     }
@@ -27,7 +38,7 @@ h1 {
     
     h2 {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-
+    margin: 0;
     }
     
     h3,
@@ -41,4 +52,4 @@ h1 {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
     }
-    
+
