@@ -1,6 +1,6 @@
-$couleur1 : --couleur1;
-$couleur2 : --couleu2;
-$couleur3 : --couleur3;
+    $couleur1: --couleur1;
+    $couleur2: --couleur2;
+    $couleur3: --couleur3;
 
 @mixin regle_couleur($selecteur, $couleur){
     #{$selecteur}{

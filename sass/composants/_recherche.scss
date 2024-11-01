@@ -19,7 +19,7 @@
 
 .recherche {
     border: 1px solid rgba(0,0,0, 0.5);
-    background-color: rgba(0,0,0, 0.3);
+
     &__input,
     &__bouton  {
         background-color: rgba(0,0,0, 0.3);
@@ -32,7 +32,7 @@
         }
 
         &:focus{
-            background-color: rgba(0,0,0, 0.4);
+            background-color: rgba(0,0,0, 0.1);
             outline: none;
         }
     }

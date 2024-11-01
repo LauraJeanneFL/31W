@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7718211 (Corrigé des bugs)
 /*
 <nav class="menu-principal-container"><ul id="menu-principal" class="menu"><li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-58"><a href="http://localhost/31W/index.php/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche et préparation au marché du travail</a></li>
 <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-59"><a href="http://localhost/31W/index.php/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation et interactivité en jeu</a></li>
@@ -9,29 +12,69 @@
 */
 
 //nav
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .menu-principal-container {
   // ul
   .menu {
     display: flex;
     list-style: none;
+    gap: 5px;
+    flex-wrap: wrap;
     //li
     .menu-item {
       margin: 0;
       padding: 0;
+      
+      animation: fadeIn 0.5s ease forwards;
       a {
-        display: block;
+        background-color: rgb(0, 0, 0, 0.2);
+        position: relative;
+        display: inline-block;
         color: black;
         text-decoration: none;
         text-transform: uppercase;
         transition: color 0.4s ease;
         padding: 10px;
 
+         &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 0;
+          background-color: black;
+          transition: width 0.3s ease;
+        }
+
         &:hover {
-          color: red;
-          text-decoration: underline;
+          background-color: rgb(0, 0, 0, 0.1);
+          color: black;
+
+          &::after {
+          width: 100%;
+          }
         }
       }
     }
+  }
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+  .menu-principal-container .menu {
+    flex-direction: column; /* Affiche les éléments en colonne */
+    align-items: flex-start;
   }
 }
 
@@ -41,4 +84,7 @@
 .menu-principale-container .menu .menu-item 
 .menu-principale-container .menu .menu-item a
 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7718211 (Corrigé des bugs)

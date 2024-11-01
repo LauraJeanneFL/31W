@@ -11,6 +11,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: theme-31w
 */
+<<<<<<< HEAD
 
 
 * {
@@ -41,6 +42,15 @@ html {
 
 /*--------------------------------------------- normalize */
 
+=======
+/* **********************************************
+Variables et mixin
+************************************************* */
+/*************************************************
+Normalize
+**************************************************/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+>>>>>>> 7718211 (Corrigé des bugs)
 /* Document
    ========================================================================== */
 /**
@@ -49,7 +59,7 @@ html {
  */
 html {
   line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  /*-webkit-text-size-adjust: 100%;  2 */
 }
 
 
@@ -75,7 +85,6 @@ main {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -350,6 +359,7 @@ template {
   display: none;
 }
 
+<<<<<<< HEAD
 /*--------------------------------------------- base  */
 h1 {
   font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
@@ -391,53 +401,110 @@ h1 {
 
 h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+=======
+/*************************************************
+Layout
+**************************************************/
+html, body {
+>>>>>>> 7718211 (Corrigé des bugs)
   margin: 0;
 
 }
 
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+:root {
+  --couleur1:#E1C7AD;
+  --couleur2: #91766E;
+  --couleur3:#B7A7A9;
 }
 
-p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-/* --------------------------------------------- composant */
-.principal__conteneur {
+.global {
+  background-color: #B7A7A9;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.principal {
+  background-color: #B7A7A9;
+  color: black;
+}
+
+.pied {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.pied__colonne {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+.pied__colonne h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.global .pied__global {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.pied__global {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #B7A7A9;
+  color: #E1C7AD;
+}
+@media (min-width: 768px) {
+  .pied__global {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.pied__global div {
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pied__global div:hover {
+  opacity: 1;
+}
+
+/*--------------------------------------------- base  */
+/*************************************************
+Composant
+**************************************************/
+.principal__conteneur {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #E1C7AD;
+  margin: 0;
+  padding: 0;
 }
 
 .principal__article {
-  border: 1px solid black;
-  flex: 1 1 340px;
+  border: 2px solid #91766E;
+  border-radius: 5px;
+  background-color: #B7A7A9;
   padding: 10px;
   margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 200px;
+  min-height: 250px;
 }
-
-.entete {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 1100px;
-  background-color: burlywood;
-  justify-content: space-between;
-}
-
-.entete__titre h1, h2 {
-  margin: 0;
-}
-
-.entete__nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.principal__article:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /*
@@ -448,33 +515,85 @@ p {
 <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-62"><a href="http://localhost/31W/index.php/2020/10/07/582-3c1-design-dinteractivite-75h/">Design d’interactivité</a></li>
 </ul></nav>
 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .menu-principal-container .menu {
   display: flex;
   list-style: none;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 .menu-principal-container .menu .menu-item {
   margin: 0;
   padding: 0;
+  animation: fadeIn 0.5s ease forwards;
 }
 .menu-principal-container .menu .menu-item a {
-  display: block;
+  position: relative;
+  display: inline-block;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.4s ease;
   padding: 10px;
 }
+.menu-principal-container .menu .menu-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: black;
+  transition: width 0.3s ease;
+}
 .menu-principal-container .menu .menu-item a:hover {
-  color: red;
-  text-decoration: underline;
+  color: black;
+}
+.menu-principal-container .menu .menu-item a:hover::after {
+  width: 100%;
 }
 
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+  .menu-principal-container .menu {
+    flex-direction: column; /* Affiche les éléments en colonne */
+    align-items: flex-start;
+  }
+}
 /*
 .menu-principale-container
 .menu-principale-container .menu 
 .menu-principale-container .menu .menu-item 
 .menu-principale-container .menu .menu-item a
 */
+.entete {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1100px;
+  background-color: #E1C7AD;
+  justify-content: space-between;
+}
+
+.entete__titre h1,
+h2 {
+  margin: 0;
+}
+
+.entete__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 /*
 <?php
 ?>
@@ -515,25 +634,64 @@ p {
   font-size: bold;
 }
 
-/*--------------------------------------------- layout  */
-.global {
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 5px;
+h1 {
+  font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
 }
 
+<<<<<<< HEAD
 
 .entete {
   background-color: burlywood;
+=======
+.entete__titre h1 a {
+  color: var(#B7A7A9);
+  background-color: var(#E1C7AD);
+>>>>>>> 7718211 (Corrigé des bugs)
 }
 
-.entete {
-  background-color: rgb(122, 8, 8);
+h2 {
+  font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
 }
 
-.principal {
-  background-color: blanchedalmond;
+h3 {
+  font-size: clamp(0.5625rem, -0.25rem + 2.6vw, 2.1875rem);
 }
 
+<<<<<<< HEAD
 .pied {
   background-color: burlywood;
+=======
+h4 {
+  font-size: clamp(0.5rem, -0.1875rem + 2.2vw, 1.875rem);
+}
+
+h5 {
+  font-size: clamp(0.5rem, -0.0313rem + 1.7vw, 1.5625rem);
+}
+
+h6 {
+  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.25rem);
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}/*# sourceMappingURL=style.css.map */
+>>>>>>> 7718211 (Corrigé des bugs)

@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -7,6 +6,7 @@
 ?>
 <?php get_header() ?>
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -82,3 +82,21 @@
     </section>
   </main>
 <?php get_footer(); ?>
+=======
+<main class="principal">
+  <section class="global">
+    <h2>Liste de cours - index.php</h2>
+    <div class="principal__conteneur">
+      <?php if (have_posts()): ?>
+        <?php while (have_posts()) :  the_post(); ?>
+          <article class="principal__article">
+            <h5><?php the_title() ?></h5>
+            <p><?php the_content() ?></p>
+          </article>
+        <?php endwhile; ?>
+    </div>
+  <?php endif ?>
+  </section>
+</main>
+<?php get_footer() ?>
+>>>>>>> 7718211 (Corrigé des bugs)

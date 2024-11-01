@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -7,6 +6,7 @@
 ?>
 <?php get_header() ?>
 
+<<<<<<< HEAD
   <main class="principal">
     <h2>Liste de cours -Résultat de la recherche </h2>
     <section class="global">
@@ -21,9 +21,24 @@
               <h6> <?php echo $titre ?> </h6>
               <p> <?php echo wp_trim_words( get_the_excerpt(), 20, null)?> </p>
             </article>
+=======
+<main class="principal">
+  <section class="global">
+    <div class="principal__recherche">
+      <h2>Résultats de recherche pour : "<?php echo get_search_query(); ?>"</h2>
+      <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+              <article class="principal__article">
+                  <h2><?php the_title(); ?></h2>
+                  <p><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+                  <a href="<?php the_permalink(); ?>">Lire plus</a>
+              </article>
+>>>>>>> 7718211 (Corrigé des bugs)
           <?php endwhile; ?>
+        <?php else : ?>
+          <p>Aucun résultat trouvé.</p>
         <?php endif; ?>
-      </div>
-    </section>
-  </main>
-<?php get_footer(); ?>
+    </div>
+  </section>
+</main>
+<?php get_footer() ?>

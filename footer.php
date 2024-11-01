@@ -1,26 +1,23 @@
 <footer class="pied">
-    <section class="global pied__global">
-      <div>
-        Auteur: Laura-Jeanne Fournier Lanctôt
-        Lien github:
+    <section class="pied__global">
+      <div class="pied__colonne">
+        <h3>Informations du cours</h3>
+        <p>Titre du travail : Création d'un thème WordPress</p>
+        <p>Auteur : Laura-Jeanne Fournier Lanctôt</p>
+        <p><a href="https://github.com/LauraJeanneFL/31W">Lien vers le dépôt GitHub</a></p>
       </div>
-      <div>
-        date: 17 octobre 2024
+      <div class="pied__colonne">
+        <h3>Objectif de l’exercice</h3>
+        <p>Ce projet vise à développer un thème WordPress personnalisé en utilisant PHP, Sass, et des animations CSS pour un design dynamique et élégant.</p>
       </div>
-      <div>
-        Texte résumé de l'exercice + image
+      <div class="pied__colonne">
+        <h3>Recherche:</h3>
+        <?php get_search_form();  ?>
       </div>
-      <div>
-        Zone de recherche: 
-      </div>
-      <div>
-        menu sur une seule colonne
-      </div>
+      
     </section>
+    <?php wp_footer(); ?>
   </footer>
-<!--   La fonction wp_footer() dans WordPress est utilisée pour insérer du contenu ou des script/plugin s
-juste avant la balise de fermeture </body> de votre site -->
-  <?php wp_footer(); ?>
 </body>
 
 </html>

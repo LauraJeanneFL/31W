@@ -11,7 +11,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: theme-31w
 */
 
+/* **********************************************
+Variables et mixin
+************************************************* */
 @import "variables/couleurs";
+<<<<<<< HEAD
 
 /*--------------------------------------------- variables & mixin */
 @import "variables/couleurs";
@@ -19,9 +23,18 @@ Text Domain: theme-31w
 /*--------------------------------------------- normalize */
 
 /*--------------------------------------------- normalize */
+=======
+/*************************************************
+Normalize
+**************************************************/
+>>>>>>> 7718211 (Corrigé des bugs)
 @import "normalize/normalize";
-
+/*************************************************
+Layout
+**************************************************/
+@import "layout/page";
 /*--------------------------------------------- base  */
+<<<<<<< HEAD
 @import "base/heading";
 // @import "base/espacement";
 // @import "base/lien";
@@ -31,13 +44,25 @@ Text Domain: theme-31w
 
 @import "composant/entete";
 
+=======
+/*************************************************
+Composant
+**************************************************/
+>>>>>>> 7718211 (Corrigé des bugs)
 @import "composants/bloc";
-@import "composants/entete";
 @import "composants/navigation";
+@import "composants/entete";
 @import "composants/recherche";
 
+<<<<<<< HEAD
 /*--------------------------------------------- layout  */
 @import "layout/page";
 
 // @import "variables/couleurs";
 
+=======
+@import "base/heading";
+// @import "base/espacement";
+// @import "base/lien";
+// @import "base/list";
+>>>>>>> 7718211 (Corrigé des bugs)

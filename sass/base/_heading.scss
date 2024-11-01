@@ -1,11 +1,14 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7718211 (Corrigé des bugs)
 h1 {
     font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
     }
     @include regle_couleur_avant_arriere (
-        ". entete__titre h1 a", 
+        ".entete__titre h1 a", 
         $couleur3, 
-        $couleur1
+        $couleur2
     );
 
 h1 {
@@ -29,11 +32,13 @@ h1 {
     }
     
     P {
-    font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
+    //font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
     }
     
     h1 {
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    margin: 0;
+    padding: 0;
     }
     
     h2 {
@@ -52,4 +57,8 @@ h1 {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 7718211 (Corrigé des bugs)
