@@ -1,5 +1,5 @@
 /*
-Theme Name: Theme 31w
+Theme Name: theme 31w version1
 Theme URI: https://referenced.ca
 Author: Eddy Martin
 Author URI: https://wordpress.org/
@@ -8,61 +8,32 @@ Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-me
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: theme-31w
+Text Domain: theme-31w-version1
 */
 
 /* **********************************************
 Variables et mixin
 ************************************************* */
 @import "variables/couleurs";
-<<<<<<< HEAD
-
-/*--------------------------------------------- variables & mixin */
-@import "variables/couleurs";
-
-/*--------------------------------------------- normalize */
-
-/*--------------------------------------------- normalize */
-=======
-/*************************************************
+/* **********************************************
 Normalize
-**************************************************/
->>>>>>> 7718211 (Corrigé des bugs)
+************************************************* */
 @import "normalize/normalize";
 /*************************************************
 Layout
 **************************************************/
 @import "layout/page";
 /*--------------------------------------------- base  */
-<<<<<<< HEAD
-@import "base/heading";
-// @import "base/espacement";
-// @import "base/lien";
-// @import "base/list";
-
-/* --------------------------------------------- composant */
-
-@import "composant/entete";
-
-=======
-/*************************************************
+/* **********************************************
 Composant
-**************************************************/
->>>>>>> 7718211 (Corrigé des bugs)
+************************************************* */
 @import "composants/bloc";
 @import "composants/navigation";
 @import "composants/entete";
 @import "composants/recherche";
 
-<<<<<<< HEAD
-/*--------------------------------------------- layout  */
-@import "layout/page";
-
-// @import "variables/couleurs";
-
-=======
 @import "base/heading";
-// @import "base/espacement";
-// @import "base/lien";
-// @import "base/list";
->>>>>>> 7718211 (Corrigé des bugs)
+//@import "base/espacement";
+//@import "base/lien";
+//@import "base/list";
+

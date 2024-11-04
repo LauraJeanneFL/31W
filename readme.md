@@ -4,22 +4,6 @@
 
 ### Les objectifs du thème
 
-<<<<<<< HEAD
-    - Vous aider à réaliser votre propre thème
-    - Documenter les concepts de base
-    - Ajouter les références qui ont permis de solutionner certains problèmes
-    
-
-## Exercice-1 
-
-### Objectifs
-    - Réaliser un thème simple, de base
-    - Auteur: Laura-Jeanne Fournier Lanctôt
-    - Date: 16 octobre 2024
-
-## Page WHC
-https://gftnth00.mywhc.ca/31w05/
-=======
 - Vous aider à réaliser votre propre thème
 - Documenter les concepts de base
 - Ajouter les références qui ont permis de solutionner certains problèmes
@@ -33,4 +17,16 @@ https://gftnth00.mywhc.ca/31w05/
 
 - Auteur : Eddy Martin
 - Adresse URL du site sur WHC : https://gftnth00.mywhc.ca/31w11/
->>>>>>> 7718211 (Corrigé des bugs)
+
+## Exercice-3
+
+### objectif : Adapter la requête principale
+
+- Améliorer le thème existant
+- Améliorer le modèle front-page.php
+- Ajouter les modèles category-cours.php et 404.php
+- Ajouter un champ personnalisé aux articles de catégorie « Cours »
+- Ajouter de nouvelles règles de style dans le dossier Sass
+- Utilisation des variables CSS/Sass
+- Utilisation/ajout de « Mixin »
+- Améliorer le design général du thème

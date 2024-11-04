@@ -18,7 +18,8 @@
 */
 
 .recherche {
-    border: 1px solid rgba(0,0,0, 0.5);
+    border: 1px solid rgba(0,0,0, 0.8);
+    
 
     &__input,
     &__bouton  {
@@ -36,6 +37,10 @@
             outline: none;
         }
     }
+    &__bouton{
+      padding: 2px;
+    }
+
     &__input::placeholder{
         color: white;
         font-size: 1.5rem;

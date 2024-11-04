@@ -6,9 +6,10 @@
  */
 ?>
 <?php get_header() ?>
+
   <main class="principal">
     <section class="global">
-      <h2>Liste de cours - 3,2,1 colonnes : category.php </h2>
+      <h2>Liste de cours - category.php </h2>
       <div class="principal__conteneur">
         <?php if (have_posts()): ?>
           <?php while (have_posts()): the_post(); ?>
@@ -17,8 +18,8 @@
               <h6> <?php the_content()?> </h6>
             </article>
           <?php endwhile; ?>
-        <?php endif; ?>
       </div>
+      <?php endif; ?>
     </section>
   </main>
   <?php get_footer(); ?>

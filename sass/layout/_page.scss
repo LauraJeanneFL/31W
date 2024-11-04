@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 
-:root{
-    --$couleur1: #7a0808;
-    --$couleur2: #3f52c8;
-    --$couleur3: #ffcf9b;
-=======
 :root {
-    --couleur1:#E1C7AD;
-    --couleur2: #91766E;
-    --couleur3:#B7A7A9;
->>>>>>> 7718211 (Corrigé des bugs)
+    --couleur1: #fa9d52;
+    --couleur2: #3E4F69;
+    --couleur3: #B8CEEB;
 }
 
 html, body{
@@ -20,82 +13,44 @@ html, body{
     box-sizing: border-box;
 }
 
-
 .global {
-<<<<<<< HEAD
-
-
-=======
-  max-width: 1280px;;
-  background-color: $couleur1 0.5;
->>>>>>> 7718211 (Corrigé des bugs)
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 5px;
+  background-color: $couleur1 0.5;
 }
 
-<<<<<<< HEAD
+/*  .entete {
+    background-color:--couleur1;
+}  */
 
-/* .entete {
-    background-color:burlywood;
-} */
  @include regle_couleur_back(".entete", $couleur1);
-=======
-@include regle_couleur_back(".entete", $couleur1);
-@include regle_couleur_back(".principal", $couleur2);
-@include regle_couleur_back(".pied", $couleur1);
->>>>>>> 7718211 (Corrigé des bugs)
-
 
 .principal {
   color: black;
 }
 
 .pied {
-<<<<<<< HEAD
-  background-color: burlywood;
-
-=======
-  display: block;
-  transition: opacity 0.3s ease; 
-}
-
-.pied__colonne {
-  flex: 1;
-  padding: 10px;
-  text-align: center;
-
-  h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
->>>>>>> 7718211 (Corrigé des bugs)
+  background-color: var(--couleur1);
 }
 
 .global .pied__global{
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 }
 
 .pied__global {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
 
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
-.pied__global div {
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.pied__colonne {
+  padding: 10px;
 }
 
-.pied__global div:hover {
-  opacity: 1;
 
-}
-
+ 

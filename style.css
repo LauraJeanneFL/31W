@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Theme Name: Theme 31w
+Theme Name: theme 31w version1
 Theme URI: https://referenced.ca
 Author: Eddy Martin
 Author URI: https://wordpress.org/
@@ -9,48 +9,15 @@ Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-me
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: theme-31w
+Text Domain: theme-31w-version1
 */
-<<<<<<< HEAD
-
-
-* {
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: aquamarine;
-  }
-
-/*--------------------------------------------- variables & mixin */
-/*--------------------------------------------- normalize */
-/* Document ===================================================================== */
-/*
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-
-/*--------------------------------------------- normalize */
-
-=======
 /* **********************************************
 Variables et mixin
 ************************************************* */
-/*************************************************
+/* **********************************************
 Normalize
-**************************************************/
+************************************************* */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
->>>>>>> 7718211 (Corrigé des bugs)
 /* Document
    ========================================================================== */
 /**
@@ -59,9 +26,8 @@ Normalize
  */
 html {
   line-height: 1.15; /* 1 */
-  /*-webkit-text-size-adjust: 100%;  2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
-
 
 /* Sections
    ========================================================================== */
@@ -85,6 +51,7 @@ main {
  */
 h1 {
   font-size: 2em;
+  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -359,62 +326,17 @@ template {
   display: none;
 }
 
-<<<<<<< HEAD
-/*--------------------------------------------- base  */
-h1 {
-  font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
-}
-
-
-entete__titre h1 a {
-  color: rgb(255, 207, 155);
-  background-color: rgb(122, 8, 8);
-}
-
-h2 {
-  font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
-}
-
-h3 {
-  font-size: clamp(0.5625rem, -0.25rem + 2.6vw, 2.1875rem);
-}
-
-h4 {
-  font-size: clamp(0.5rem, -0.1875rem + 2.2vw, 1.875rem);
-}
-
-h5 {
-  font-size: clamp(0.5rem, -0.0313rem + 1.7vw, 1.5625rem);
-}
-
-h6 {
-  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.25rem);
-}
-
-P {
-  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
-}
-
-h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-=======
 /*************************************************
 Layout
 **************************************************/
-html, body {
->>>>>>> 7718211 (Corrigé des bugs)
-  margin: 0;
-
+:root {
+  --couleur1: #fa9d52;
+  --couleur2: #3E4F69;
+  --couleur3: #B8CEEB;
 }
 
-:root {
-  --couleur1:#E1C7AD;
-  --couleur2: #91766E;
-  --couleur3:#B7A7A9;
+html, body {
+  margin: 0;
 }
 
 * {
@@ -422,89 +344,62 @@ html, body {
 }
 
 .global {
-  background-color: #B7A7A9;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 5px;
+  background-color: --couleur1 0.5;
+}
+
+/*  .entete {
+    background-color:--couleur1;
+}  */
+.entete {
+  background-color: var(--couleur1);
 }
 
 .principal {
-  background-color: #B7A7A9;
   color: black;
 }
 
 .pied {
-  display: block;
-  transition: opacity 0.3s ease;
-}
-
-.pied__colonne {
-  flex: 1;
-  padding: 10px;
-  text-align: center;
-}
-.pied__colonne h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  background-color: var(--couleur1);
 }
 
 .global .pied__global {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 }
 
 .pied__global {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
-  background-color: #B7A7A9;
-  color: #E1C7AD;
 }
 @media (min-width: 768px) {
   .pied__global {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
-.pied__global div {
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.pied__global div:hover {
-  opacity: 1;
+.pied__colonne {
+  padding: 10px;
 }
 
 /*--------------------------------------------- base  */
-/*************************************************
+/* **********************************************
 Composant
-**************************************************/
+************************************************* */
 .principal__conteneur {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  background-color: #E1C7AD;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .principal__article {
-  border: 2px solid #91766E;
-  border-radius: 5px;
-  background-color: #B7A7A9;
+  border: 1px solid black;
+  flex: 1 1 340px;
   padding: 10px;
-  margin: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 200px;
-  min-height: 250px;
-}
-.principal__article:hover {
-  transform: scale(1.01);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /*
@@ -538,24 +433,25 @@ Composant
 }
 .menu-principal-container .menu .menu-item a {
   position: relative;
-  display: inline-block;
+  display: block;
+  padding: 7px;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.4s ease;
-  padding: 10px;
 }
 .menu-principal-container .menu .menu-item a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 2px;
+  height: 1.5px;
   width: 0;
   background-color: black;
-  transition: width 0.3s ease;
+  transition: width 0.4s ease;
 }
 .menu-principal-container .menu .menu-item a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
 .menu-principal-container .menu .menu-item a:hover::after {
@@ -577,14 +473,12 @@ Composant
 */
 .entete {
   display: flex;
-  flex-direction: column;
-  flex-basis: 1100px;
-  background-color: #E1C7AD;
+  align-items: center;
   justify-content: space-between;
 }
 
 .entete__titre h1,
-h2 {
+.entete__titre h2 {
   margin: 0;
 }
 
@@ -612,8 +506,7 @@ h2 {
 .recherche__bouton img {}
 */
 .recherche {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.8);
 }
 .recherche__input, .recherche__bouton {
   background-color: rgba(0, 0, 0, 0.3);
@@ -625,8 +518,11 @@ h2 {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .recherche__input:focus, .recherche__bouton:focus {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
   outline: none;
+}
+.recherche__bouton {
+  padding: 2px;
 }
 .recherche__input::placeholder {
   color: white;
@@ -638,15 +534,13 @@ h1 {
   font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
 }
 
-<<<<<<< HEAD
-
-.entete {
-  background-color: burlywood;
-=======
 .entete__titre h1 a {
-  color: var(#B7A7A9);
-  background-color: var(#E1C7AD);
->>>>>>> 7718211 (Corrigé des bugs)
+  color: var(--couleur3);
+  background-color: var(--couleur2);
+}
+
+h1 {
+  font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
 }
 
 h2 {
@@ -657,10 +551,6 @@ h3 {
   font-size: clamp(0.5625rem, -0.25rem + 2.6vw, 2.1875rem);
 }
 
-<<<<<<< HEAD
-.pied {
-  background-color: burlywood;
-=======
 h4 {
   font-size: clamp(0.5rem, -0.1875rem + 2.2vw, 1.875rem);
 }
@@ -671,6 +561,10 @@ h5 {
 
 h6 {
   font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.25rem);
+}
+
+P {
+  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
 }
 
 h1 {
@@ -694,4 +588,3 @@ h6 {
 p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }/*# sourceMappingURL=style.css.map */
->>>>>>> 7718211 (Corrigé des bugs)

@@ -6,11 +6,8 @@ function ajouter_style()
 {
     // pour etre capable d'ajouter une feuille de style -> nécessaire action 
     wp_enqueue_style(
-<<<<<<< HEAD
+
         'mon_stlyle',
-=======
-        'mon_style',
->>>>>>> 7718211 (Corrigé des bugs)
         get_template_directory_uri() . '/style.css',
         array(),
         filemtime(get_template_directory() . '/style.css')
@@ -22,7 +19,6 @@ function ajouter_style()
 // wp_enqueue_scripts = fonctin du script et ajouter_style = execute
 add_action('wp_enqueue_scripts', 'ajouter_style');
 
-<<<<<<< HEAD
 function ajout_options () {
 
     // Activer le support des menus personnalisés
@@ -30,15 +26,6 @@ function ajout_options () {
 }
 
 add_action("after_setup_theme", "ajout_options");
-=======
-function ajout_options()
-{
-    //activer le support des menus personnalisés
-    add_theme_support('menus');
-}
-
-add_action("after_setup-theme", "ajout_options");
-
 
 /** --------------------- Modifier la requete principale
  * 
@@ -50,11 +37,10 @@ add_action("after_setup-theme", "ajout_options");
  */
 function modifie_requete_principal( $query ) 
 {
-  if ($query->is_home() && $query->is_main_query() && ! is_admin()) {
+  if ($query->is_home() && $query->is_main_query() && ! is_admin() ) {
   $query->set( 'category_name', 'Cours' );
   $query->set( 'orderby', 'title' );
   $query->set( 'order', 'ASC' );
   }
 }
  add_action( 'pre_get_posts', 'modifie_requete_principal' );
->>>>>>> 7718211 (Corrigé des bugs)

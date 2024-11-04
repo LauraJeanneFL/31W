@@ -1,12 +1,11 @@
 .entete {
   display: flex;
-  flex-direction: column;
-  flex-basis: 1100px;
+  align-items: center;
   justify-content: space-between;
 }
 
 .entete__titre h1,
-h2 {
+.entete__titre h2 {
   margin: 0;
 }
 
