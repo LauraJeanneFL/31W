@@ -330,12 +330,14 @@ template {
 Layout
 **************************************************/
 :root {
-  --couleur1: #766167;
+  --couleur1: #7661678b;
   --couleur2: #889ba6;
   --couleur3: #ead7c3;
 }
 
 html, body {
+  background-color: var(--couleur1);
+  color: #333;
   margin: 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
   background-color: var(--couleur3);
@@ -348,9 +350,8 @@ html, body {
 .global {
   max-width: 1100px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(136, 155, 166, 0.951);
   padding: 20px;
-  border-radius: 10px;
 }
 
 /*  .entete {
@@ -361,13 +362,15 @@ html, body {
 }
 
 .principal {
-  color: black;
+  background: rgba(255, 255, 255, 0.165);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .pied {
   background-color: var(--couleur1);
   padding: 20px;
   border-top: 2px solid var(--couleur2);
+  color: white;
 }
 
 .pied__colonne {
@@ -395,40 +398,39 @@ html, body {
 Composant
 ************************************************* */
 .principal__conteneur {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  padding: 20px;
+  background-color: rgba(var(--couleur2), 0.2);
 }
 
 .principal__article {
-  background-color: var(--couleur1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  background-color: var(--couleur3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .principal__article:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-.principal__article h5, .principal__article h6 {
-  color: var(--couleur2);
-  margin: 5px 0;
+.principal__article h5, .principal__article h6, .principal__article p {
+  margin: 0 0 10px 0;
 }
-.principal__article p {
-  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
-  color: #222;
+.principal__article h5 {
+  font-size: 1.25rem;
+  color: black;
 }
 .principal__article a {
-  color: var(--couleur2);
-  font-weight: bold;
+  color: black;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: bold;
 }
 .principal__article a:hover {
-  color: var(--couleur3);
+  text-decoration: underline;
 }
 
 /*
@@ -490,7 +492,7 @@ Composant
 /* Styles pour petits écrans */
 @media (max-width: 768px) {
   .menu-principal-container .menu {
-    flex-direction: column; /* Affiche les éléments en colonne */
+    flex-direction: column;
     align-items: flex-start;
   }
 }
@@ -507,7 +509,6 @@ Composant
   background-color: var(--couleur2);
   color: white;
   padding: 10px;
-  border-radius: 8px;
 }
 
 .entete__titre h1,
@@ -519,6 +520,10 @@ Composant
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.entete__titre h1 a {
+  color: var(--couleur3);
 }
 
 /*
@@ -540,7 +545,7 @@ Composant
 */
 .recherche {
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  padding: 5px;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.8);
 }
@@ -573,7 +578,6 @@ Composant
 h1 {
   font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: var(--couleur2);
 }
 
 .entete__titre h1 a {
@@ -618,7 +622,7 @@ h2 {
 
 h2, h3 {
   font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
-  color: var(--couleur3);
+  color: black;
 }
 
 h3,

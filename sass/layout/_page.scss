@@ -1,13 +1,12 @@
 :root {
-  --couleur1: #766167;
+  --couleur1: #7661678b;
   --couleur2: #889ba6;
   --couleur3: #ead7c3;
-  
-    
-    
 }
 
 html, body{
+    background-color: var(--couleur1);
+    color: #333;
     margin: 0;
     font-family: "Trebuchet MS", Arial, sans-serif;
     background-color: var(--couleur3);
@@ -20,9 +19,8 @@ html, body{
 .global {
   max-width: 1100px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(136, 155, 166, 0.951);
   padding: 20px;
-  border-radius: 10px;
 }
 
 /*  .entete {
@@ -32,13 +30,15 @@ html, body{
  @include regle_couleur_back(".entete", $couleur1);
 
 .principal {
-  color: black;
+  background: rgba(255, 255, 255, 0.165); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .pied {
   background-color: var(--couleur1);
   padding: 20px;
   border-top: 2px solid var(--couleur2);
+  color: white;
 }
 
 .pied__colonne {
