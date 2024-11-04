@@ -39,25 +39,37 @@ html, body{
   padding: 20px;
   border-top: 2px solid var(--couleur2);
   color: white;
+  text-transform: uppercase;
 }
 
 .pied__colonne {
   padding: 10px;
-}
 
-.global .pied__global{
-  display: flex;
-  flex-direction: column;
+  & img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+
+  }
 }
 
 .pied__global {
-  display: flex;
+ display: flex;
   flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
 
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-around;
   }
+}
+
+.pied__conteneur {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    gap: 40px;
+    align-items: baseline;
 }
 
 
