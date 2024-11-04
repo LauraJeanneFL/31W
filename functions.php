@@ -38,9 +38,10 @@ add_action("after_setup_theme", "ajout_options");
 function modifie_requete_principal( $query ) 
 {
   if ($query->is_home() && $query->is_main_query() && ! is_admin() ) {
-  $query->set( 'category_name', 'Cours' );
+  $query->set( 'category_name', 'nouvelle' );
   $query->set( 'orderby', 'title' );
   $query->set( 'order', 'ASC' );
   }
 }
  add_action( 'pre_get_posts', 'modifie_requete_principal' );
+

@@ -8,29 +8,24 @@
 
 <main class="principal">
   <section class="global">
-    <h2>Liste de cours -</h2><code>404.php</code>
+    <h1>Erreur 404 - Page non trouvée</h1>
+    <p>Voici une liste de cours disponibles :</p>
     <div class="principal__conteneur">
-        <h1>Erreur  404</h1>
-        <?php wp_nav_menu(array(
-            "menu" => "erreur404",
-            "container" => "nav"
-        ));
-
-        $args = array(
-          'category_name' => "cours",
-          'orderby' => 'title',
-          'order' => 'ASC'
-        );
-        $query = new WP_Query($args);
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post(); ?>
-            <article>
-              <p><?php the_title() ?></p>
-
-            </article>
-        <?php endwhile; ?>
-      <?php endif;
-      wp_reset_postdata(); ?>
+      <?php
+            $args = array(
+                'category_name' => 'cours',
+                'orderby' => 'title',
+                'order' => 'ASC'
+            );
+            $query = new WP_Query($args);
+            if ($query->have_posts()) :
+                while ($query->have_posts()) : $query->the_post(); 
+                    $sigle = substr(get_the_title(), 0, 3);
+            ?>
+                <article>
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html($sigle); ?></a>
+                </article>
+            <?php endwhile; wp_reset_postdata(); endif; ?>
     </div>
   </section>
 </main>
