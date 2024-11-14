@@ -33,7 +33,7 @@ function genere_carrousel() {
     <div class="galerie">
         <!-- Images de la galerie ici -->
     </div>
-    <div class="carrousel__bouton-container>
+    <div class="carrousel__bouton-container">
         <button class="carrousel__ouvrir">Ouvrir</button>
     </div>
     <div class="carrousel">
@@ -44,6 +44,5 @@ function genere_carrousel() {
     </div>';
     return $chaine;
 }
-
 add_shortcode("carrousel", "genere_carrousel");
 
