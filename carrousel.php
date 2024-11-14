@@ -37,7 +37,6 @@ function genere_carrousel() {
             <button class="carrousel__gauche">Gauche</button>
             <button class="carrousel__droite">Droite</button>
             <figure class="carrousel__figure"></figure>
-            <form class="carrousel__form"></form>
         </div>
         ';
     return $chaine;
