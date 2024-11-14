@@ -1,5 +1,5 @@
 .carrousel {
-    position: absolute;
+  /*   position: absolute;
     transform: translate(-50%, -50%) scale(0);
     transition: transform .5s;
     top: 25%;
@@ -8,76 +8,94 @@
     background-color: brown;
     width: 50vw;
     height: 50vh;
-    z-index: 9;
+    z-index: 9; */
+
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carrousel__x {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9;
-    font-size: 2em;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  font-size: 2em;
+  cursor: pointer;
 }
 
 .carrousel--ouvrir {
-    transform: scale(1);
+  display: block;
+  transform: scale(1);
 }
 
-.carrousel__gauche, 
-.carrousel__droite {
-    position: absolute;
+.carrousel__gauche,
+.carrousel__droite,
+.carrousel__x {
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+  padding: 1em;
+
+  /*    position: absolute;
     top: 50%;
-    z-index: 9;
+    z-index: 9; */
 }
 
 .carrousel__gauche {
-    left: 0;
+  left: 0;
 }
 
 .carrousel__droite {
-    right: 0;
+  right: 0;
 }
 
 .carrousel__figure {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* position: absolute; 
+    width: 100%;*/
 }
 
 .carrousel__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
 }
 
-.carrousel__img--visible{
-    opacity: 1;
+.carrousel__img--visible {
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 .carrousel__bouton {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #1c1b1b;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1c1b1b;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
 }
 .carrousel__bouton:hover {
-    background-color: #d52b2b;
+  background-color: #d52b2b;
 }
 
 .carrousel__radio {
-    display: inline-block;
-    margin: 5px;
+  display: inline-block;
+  margin: 5px;
 }
-
-
