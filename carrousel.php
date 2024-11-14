@@ -1,4 +1,4 @@
-d<?php
+<?php
 /*
 Plugin name: Carrousel
 Description: Carrousel permettant d'afficher le contenu d'une galerie
