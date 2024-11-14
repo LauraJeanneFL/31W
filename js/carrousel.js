@@ -1,7 +1,7 @@
 (function () {
   console.log("Vive JavaScript");
 
-  let carrousel__bouton = document.querySelector(".carrousel__bouton");
+  let carrousel__bouton = document.querySelector(".carrousel__ouvrir");
   let carrousel__x = document.querySelector(".carrousel__x");
   let carrousel = document.querySelector(".carrousel");
   let carrousel__figure = document.querySelector(".carrousel__figure");
