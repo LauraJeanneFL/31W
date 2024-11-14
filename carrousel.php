@@ -12,14 +12,14 @@ function enfile_css_js()
 
     wp_enqueue_style(
         "carrousel",
-        plugin_dir_url(__FILE__) . "/style.css",
+        plugin_dir_url(__FILE__) . "style.css",
         array(),
         $version_css
     );
 
     wp_enqueue_script(
         "carrousel",
-        plugin_dir_url(__FILE__) . "/js/carrousel.js",
+        plugin_dir_url(__FILE__) . "js/carrousel.js",
         array(),
         $version_js,
         true

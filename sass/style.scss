@@ -2,8 +2,8 @@
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
     transition: transform .5s;
-    top: 50%;
-    left: 50%;
+    top: 25%;
+    left: 25%;
     border: 3px solid #333;
     background-color: brown;
     width: 50vw;
@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 .carrousel__bouton:hover {
-    background-color: #757575;
+    background-color: #d52b2b;
 }
 
 .carrousel__radio {
