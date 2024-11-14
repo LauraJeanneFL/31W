@@ -39,13 +39,13 @@
       currentIndex = index;
       remplirCarrousel();
       afficheImage(currentIndex);
-      carrousel.classList.add("carrousel--ouvrir");
+      carrousel.classList.add("carrousel__bouton");
     });
   });
 
   // Bouton pour fermer le carrousel
   carrousel__x.addEventListener("click", function () {
-    carrousel.classList.remove("carrousel--ouvrir");
+    carrousel.classList.remove("carrousel__bouton");
     console.log("fermer");
   });
 
