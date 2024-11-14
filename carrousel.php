@@ -34,7 +34,7 @@ function genere_carrousel() {
         <!-- Images de la galerie ici -->
     </div>
     <div class="carrousel__bouton-container">
-        <button class="carrousel__ouvrir">Ouvrir</button>
+        <button class="carrousel__bouton">Ouvrir</button>
     </div>
     <div class="carrousel">
         <button class="carrousel__x">X</button>
