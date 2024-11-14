@@ -31,16 +31,13 @@ add_action("wp_enqueue_scripts", "enfile_css_js");
 function genere_carrousel() {
     $chaine = '
     <div class="galerie">
-        <!-- Images de la galerie ici -->
     </div>
-    <div class="carrousel__bouton-container">
-        <button class="carrousel__bouton">Ouvrir</button>
-    </div>
-    <div class="carrousel">
+    <div class="carrousel carrousel--ouvrir">
         <button class="carrousel__x">X</button>
-        <button class="carrousel__gauche">Gauche</button>
-        <button class="carrousel__droite">Droite</button>
+        <button class="carrousel__gauche">Précédent</button>
+        <button class="carrousel__droite">Suivant</button>
         <figure class="carrousel__figure"></figure>
+        <div class="carrousel__indicateurs"></div>
     </div>';
     return $chaine;
 }
