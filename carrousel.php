@@ -7,8 +7,8 @@ author uri: http://referenced.ca
 */
 function enfile_css_js()
 {
-    $version_css = filemtime(plugin_dir_path(__FILE__). "/style.css");
-    $version_js = filemtime(plugin_dir_path(__FILE__). "/js/carrousel.js");
+    $version_css = filemtime(plugin_dir_path(__FILE__). "style.css");
+    $version_js = filemtime(plugin_dir_path(__FILE__). "js/carrousel.js");
 
     wp_enqueue_style(
         "carrousel",
