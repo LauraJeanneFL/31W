@@ -1,7 +1,7 @@
 (function () {
   console.log("Vive JavaScript");
 
-  let carrousel__bouton = document.querySelector(".carrousel__ouvrir");
+  let carrousel__bouton = document.querySelector(".carrousel__bouton");
   let carrousel__x = document.querySelector(".carrousel__x");
   let carrousel = document.querySelector(".carrousel");
   let carrousel__figure = document.querySelector(".carrousel__figure");
@@ -23,7 +23,7 @@
     });
   }
 
-  // Affiche l'image à l'index spécifié
+  // Fonction pour afficher l'image à un index spécifique
   function afficheImage(index) {
     let images = document.querySelectorAll(".carrousel__img");
     images.forEach((img, i) => {
@@ -33,37 +33,32 @@
     currentIndex = index;
   }
 
-  // Navigation pour passer à l'image suivante
-  function imageSuivante() {
-    currentIndex = (currentIndex + 1) % galerie__img.length;
-    afficheImage(currentIndex);
-  }
-
-  // Navigation pour passer à l'image précédente
-  function imagePrecedente() {
-    currentIndex =
-      (currentIndex - 1 + galerie__img.length) % galerie__img.length;
-    afficheImage(currentIndex);
-  }
-
-  carrousel__bouton.addEventListener("click", function () {
-    if (carrousel__figure.innerHTML === "") {
+  // Événement pour afficher le carrousel en cliquant sur une image de la galerie
+  galerie__img.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentIndex = index;
       remplirCarrousel();
-    }
-    afficheImage(currentIndex);
-    carrousel.classList.add("carrousel--ouvrir");
-    console.log("Ouvrir");
+      afficheImage(currentIndex);
+      carrousel.classList.add("carrousel--ouvrir");
+    });
   });
 
+  // Bouton pour fermer le carrousel
   carrousel__x.addEventListener("click", function () {
     carrousel.classList.remove("carrousel--ouvrir");
     console.log("fermer");
   });
 
-  document
-    .querySelector(".carrousel__droite")
-    .addEventListener("click", imageSuivante);
-  document
-    .querySelector(".carrousel__gauche")
-    .addEventListener("click", imagePrecedente);
+  // Navigation pour passer à l'image suivante
+  document.querySelector(".carrousel__droite").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galerie__img.length;
+    afficheImage(currentIndex);
+  });
+
+  // Navigation pour passer à l'image précédente
+  document.querySelector(".carrousel__gauche").addEventListener("click", () => {
+    currentIndex =
+      (currentIndex - 1 + galerie__img.length) % galerie__img.length;
+    afficheImage(currentIndex);
+  });
 })();
