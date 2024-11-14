@@ -1,4 +1,4 @@
-<?php
+d<?php
 /*
 Plugin name: Carrousel
 Description: Carrousel permettant d'afficher le contenu d'une galerie
@@ -33,7 +33,9 @@ function genere_carrousel() {
     <div class="galerie">
         <!-- Images de la galerie ici -->
     </div>
-    <button class="carrousel__bouton">Ouvrir</button>
+    <div class="carrousel__bouton-container>
+        <button class="carrousel__ouvrir">Ouvrir</button>
+    </div>
     <div class="carrousel">
         <button class="carrousel__x">X</button>
         <button class="carrousel__gauche">Gauche</button>
