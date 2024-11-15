@@ -15,6 +15,7 @@ Text Domain: theme-31w
     margin: 0;
     box-sizing: border-box;
   }
+<<<<<<< Updated upstream
   
   body {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -23,3 +24,261 @@ Text Domain: theme-31w
     line-height: 1.5;
     background-color: aquamarine;
   }
+=======
+}
+
+.pied__conteneur {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  gap: 40px;
+  align-items: baseline;
+}
+
+/*--------------------------------------------- base  */
+/* **********************************************
+Composant
+************************************************* */
+.principal__conteneur {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: rgba(var(--couleur2), 0.2);
+}
+
+.principal__article {
+  border: 5px solid var(--couleur1);
+  border-radius: 2px;
+  padding: 20px;
+  background-color: var(--couleur3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* &:hover {
+      transform: translateY(-5px); 
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  
+  }
+  */
+}
+.principal__article h5, .principal__article h6, .principal__article p {
+  margin: 0 0 10px 0;
+}
+.principal__article h5 {
+  font-size: 1.25rem;
+  color: black;
+}
+.principal__article a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.principal__article a:hover {
+  text-decoration: underline;
+}
+
+/*
+<nav class="menu-principal-container"><ul id="menu-principal" class="menu"><li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-58"><a href="http://localhost/31W/index.php/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche et préparation au marché du travail</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-59"><a href="http://localhost/31W/index.php/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation et interactivité en jeu</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-60"><a href="http://localhost/31W/index.php/2020/10/07/description-du-cours-582-1m2-conception-graphique-et-imagerie-matricielle/">Conception graphique et imagerie matricielle</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-61"><a href="http://localhost/31W/index.php/2020/10/07/582-2w2animation-et-interactivite-web-75h/">Animation et interactivité Web</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-62"><a href="http://localhost/31W/index.php/2020/10/07/582-3c1-design-dinteractivite-75h/">Design d’interactivité</a></li>
+</ul></nav>
+*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu-principal-container .menu {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.menu-principal-container .menu .menu-item {
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+.menu-principal-container .menu .menu-item a {
+  position: relative;
+  display: block;
+  padding: 7px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+.menu-principal-container .menu .menu-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 0;
+  background-color: black;
+  transition: width 0.4s ease;
+}
+.menu-principal-container .menu .menu-item a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+.menu-principal-container .menu .menu-item a:hover::after {
+  width: 100%;
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+  .menu-principal-container .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/*
+.menu-principale-container
+.menu-principale-container .menu 
+.menu-principale-container .menu .menu-item 
+.menu-principale-container .menu .menu-item a
+*/
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--couleur2);
+  color: white;
+  padding: 10px;
+}
+.entete .entete {
+  background-color: var(--couleur1);
+}
+
+.entete__titre h1,
+.entete__titre h2 {
+  margin: 0;
+}
+
+.entete__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.entete__titre h1 a {
+  color: var(--couleur3);
+}
+
+/*
+<?php
+?>
+<form class="recherche" role="search" method="get"  action="<?php echo esc_url( home_url( '/' ) ); ?>">
+  <label>
+    <input class="recherche__input" type="search" class="search-field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" />
+  </label>
+  <button class="recherche__bouton" type="submit" class="search-submit">
+    <img src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="32" height="32">
+  </button>
+</form>
+*/
+/*
+.recherche__input{}
+.recherche__bouton {}
+.recherche__bouton img {}
+*/
+.recherche {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.recherche__input, .recherche__bouton {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: #222;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.recherche__input:hover, .recherche__bouton:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.recherche__input:focus, .recherche__bouton:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.recherche__bouton {
+  padding: 2px;
+}
+.recherche__input::placeholder {
+  color: #666;
+  font-size: 1.5rem;
+  font-size: bold;
+}
+
+h1 {
+  font-size: clamp(2rem, -0.75rem + 4.8vw, 4rem);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.entete__titre h1 a {
+  color: var(--couleur3);
+  background-color: var(--couleur2);
+}
+
+h2 {
+  font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(0.5625rem, -0.25rem + 2.6vw, 2.1875rem);
+}
+
+h4 {
+  font-size: clamp(0.5rem, -0.1875rem + 2.2vw, 1.875rem);
+}
+
+h5 {
+  font-size: clamp(0.5rem, -0.0313rem + 1.7vw, 1.5625rem);
+}
+
+h6 {
+  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.25rem);
+}
+
+P {
+  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 0;
+}
+
+h2, h3 {
+  font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
+  color: black;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+}
+
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}/*# sourceMappingURL=style.css.map */
+>>>>>>> Stashed changes
