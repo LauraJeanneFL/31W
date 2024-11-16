@@ -2,8 +2,8 @@
 /*
 Plugin name: Carrousel
 Description: Carrousel permettant d'afficher le contenu d'une galerie
-author: Laura-Jeanne Fournier L.
-author uri: http://referenced.ca
+Author: Laura-Jeanne Fournier L.
+Author uri: http://referenced.ca
 */
 function enfile_css_js()
 {
@@ -29,16 +29,38 @@ add_action("wp_enqueue_scripts", "enfile_css_js");
 
 
 function genere_carrousel() {
-    $chaine = '
-    <div class="galerie">
-    </div>
-    <div class="carrousel carrousel--ouvrir">
+    $args = array(
+        'post_type'      => 'attachment',
+        'posts_per_page' => -1,
+        'post_status'    => 'inherit',
+        'post_mime_type' => 'image',
+    );
+    $images = get_posts($args);
+
+    if (!$images) {
+        return '<p>Aucune image disponible pour le carrousel.</p>';
+    }
+
+    $chaine = '<div class="galerie">';
+    foreach ($images as $index => $image) {
+        $url = wp_get_attachment_url($image->ID);
+        $chaine .= '<img src="' . esc_url($url) . '" class="galerie__img" data-index="' . $index . '" alt="Image ' . ($index + 1) . '">';
+    }
+    $chaine .= '</div>';
+
+    $chaine .= '
+    <div class="carrousel">
         <button class="carrousel__x">X</button>
         <button class="carrousel__gauche">Précédent</button>
         <button class="carrousel__droite">Suivant</button>
         <figure class="carrousel__figure"></figure>
-        <div class="carrousel__indicateurs"></div>
+        <div class="carrousel__indicateurs">';
+    foreach ($images as $index => $image) {
+        $chaine .= '<input type="radio" name="carrousel-radio" class="carrousel__indicateur" data-index="' . $index . '">';
+    }
+    $chaine .= '</div>
     </div>';
+
     return $chaine;
 }
 add_shortcode("carrousel", "genere_carrousel");
