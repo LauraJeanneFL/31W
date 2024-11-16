@@ -45,3 +45,18 @@ function modifie_requete_principal( $query )
 }
  add_action( 'pre_get_posts', 'modifie_requete_principal' );
 
+function theme_setup() {
+    // Activer les menus personnalisés
+    add_theme_support('menus');
+
+    // Enregistrer les emplacements de menu
+    register_nav_menus(array(
+        'footer-menu' => __('Footer Menu', 'theme-textdomain'),
+    ));
+}
+add_action('after_setup_theme', 'theme_setup');
+
+function ajouter_support_pages() {
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'ajouter_support_pages');

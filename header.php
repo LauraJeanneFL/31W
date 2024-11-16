@@ -1,6 +1,4 @@
-
 <?php
-
 /**
  * index.php - Le modèle par défaut de wordpress
  */

@@ -11,47 +11,46 @@
 </form>
 */
 
-/*
-.recherche__input{}
-.recherche__bouton {}
-.recherche__bouton img {}
-*/
-
 .recherche {
-    border: 1px solid rgba(0,0,0, 0.8);
-    padding: 5px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.8);
-  
-    &__input,
-    &__bouton  {
-        background-color: rgba(0,0,0, 0.3);
-        border: none;
-        outline: none;
-        font-size: 1.5rem;
-        color: #222;
-        padding: 5px 10px;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
+  display: flex;
+  max-width: fit-content;
+  position: relative;
 
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.15);
-        }
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 
-        &:focus{
-            background-color: rgba(0,0,0, 0.1);
-            outline: none;
-        }
-    }
-    &__bouton{
-      padding: 2px;
+  &__input,
+  &__bouton {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    color: #222;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.15);
     }
 
-    &__input::placeholder{
-        color: #666;
-        font-size: 1.5rem;
-        font-size: bold;
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.1);
+      outline: none;
     }
+     & img {
+        width: 20px; 
+        height: 20px; 
+    }
+  }
+  &__bouton {
+    padding: 2px;
+  }
 
-
+  &__input::placeholder {
+    color: #666;
+    font-size: 1.5rem;
+    font-size: bold;
+  }
 }

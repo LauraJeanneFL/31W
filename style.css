@@ -336,7 +336,6 @@ Layout
 }
 
 html, body {
-  background-color: var(--couleur1);
   color: #333;
   margin: 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
@@ -348,21 +347,26 @@ html, body {
 }
 
 .global {
+  background-color: rgba(136, 155, 166, 0.5843137255);
   max-width: 1100px;
   margin: 0 auto;
-  background-color: rgba(136, 155, 166, 0.951);
-  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /*  .entete {
     background-color:--couleur1;
 }  */
+.entete__titre h1 a {
+  color: var(#ead7c3);
+  background-color: var(#889ba6);
+}
+
 .entete {
-  background-color: var(--couleur1);
+  background-color: var(rgba(118, 97, 103, 0.5450980392));
 }
 
 .principal {
-  background: rgba(255, 255, 255, 0.165);
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -378,7 +382,7 @@ html, body {
   padding: 10px;
 }
 .pied__colonne img {
-  width: 70%;
+  width: 10%;
   height: auto;
   object-fit: cover;
 }
@@ -518,7 +522,6 @@ Composant
   justify-content: space-between;
   background-color: var(--couleur2);
   color: white;
-  padding: 10px;
 }
 
 .entete__titre h1,
@@ -548,12 +551,10 @@ Composant
   </button>
 </form>
 */
-/*
-.recherche__input{}
-.recherche__bouton {}
-.recherche__bouton img {}
-*/
 .recherche {
+  display: flex;
+  max-width: fit-content;
+  position: relative;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 5px;
   border-radius: 8px;
@@ -566,7 +567,6 @@ Composant
   font-size: 1.5rem;
   color: #222;
   padding: 5px 10px;
-  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 .recherche__input:hover, .recherche__bouton:hover {
@@ -575,6 +575,10 @@ Composant
 .recherche__input:focus, .recherche__bouton:focus {
   background-color: rgba(0, 0, 0, 0.1);
   outline: none;
+}
+.recherche__input img, .recherche__bouton img {
+  width: 20px;
+  height: 20px;
 }
 .recherche__bouton {
   padding: 2px;
@@ -591,8 +595,8 @@ h1 {
 }
 
 .entete__titre h1 a {
-  color: var(--couleur3);
-  background-color: var(--couleur2);
+  color: var(#ead7c3);
+  background-color: var(#889ba6);
 }
 
 h2 {

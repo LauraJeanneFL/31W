@@ -5,7 +5,6 @@
 }
 
 html, body{
-    background-color: var(--couleur1);
     color: #333;
     margin: 0;
     font-family: "Trebuchet MS", Arial, sans-serif;
@@ -17,20 +16,22 @@ html, body{
 }
 
 .global {
+  background-color: #889ba695;
   max-width: 1100px;
   margin: 0 auto;
-  background-color: rgba(136, 155, 166, 0.951);
-  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /*  .entete {
     background-color:--couleur1;
 }  */
-
- @include regle_couleur_back(".entete", $couleur1);
+  
+// Utilisation du mixin avec Sass pour colorer les éléments
+@include regle_couleur_avant_arriere(".entete__titre h1 a", $couleur3, $couleur2);
+@include regle_couleur_back(".entete", $couleur1);
 
 .principal {
-  background: rgba(255, 255, 255, 0.165); 
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -46,7 +47,7 @@ html, body{
   padding: 10px;
 
   & img {
-    width: 70%;
+    width: 10%;
     height: auto;
     object-fit: cover;
 
@@ -54,7 +55,7 @@ html, body{
 }
 
 .pied__global {
- display: flex;
+  display: flex;
   flex-direction: column;
   gap: 20px;
   padding-top: 20px;
