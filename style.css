@@ -1,3 +1,21 @@
-.filtre__bouton {
-  background-color: blue;
-}/*# sourceMappingURL=style.css.map */
+.filtrepost-buttons {
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.filtrepost-button {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.filtrepost-button:hover {
+    background-color: #005177;
+}
+
+#filtrepost-results {
+    margin-top: 20px;
+}
