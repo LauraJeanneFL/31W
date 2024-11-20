@@ -1,0 +1,13 @@
+# Ignorer les fichiers système
+.DS_Store
+
+# Ignorer les fichiers générés génériques
+*.zip
+*.log
+
+
+# Ignorer les thèmes
+wp-content/themes/
+
+# Ignorer les fichiers d'upload
+wp-content/uploads/
