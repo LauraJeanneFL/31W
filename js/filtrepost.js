@@ -1,18 +1,35 @@
-/* (function(){
-    let filtre__bouton = document.querySelector('.filtre__bouton button');
-    console.log(filtre__bouton.lenght);
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".filtrepost-button");
+  const resultsDiv = document.getElementById("filtrepost-results");
 
-    function extraire_cours() {
-        fetch(
-          `https://localhost:81/31w05/wp-json/wp/v2/posts?categories=${categorie}&per_page=30`
-        )
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const categoryId = button.getAttribute("data-id");
+      resultsDiv.innerHTML = "<p>Chargement...</p>";
+
+      fetch(`${filtrepost.rest_url}?category_id=${categoryId}`, {
+        headers: {
+          "X-WP-Nonce": filtrepost.nonce,
+        },
+      })
         .then((response) => response.json())
         .then((data) => {
-            console.log("Articles récupérés:", data);
-            afficherArticles(data);
+          resultsDiv.innerHTML = "";
+          if (data.length > 0) {
+            data.forEach((post) => {
+              const postElement = document.createElement("p");
+              postElement.innerHTML = `<a href="${post.link}">${post.title}</a>`;
+              resultsDiv.appendChild(postElement);
+            });
+          } else {
+            resultsDiv.innerHTML = "<p>Aucun article trouvé.</p>";
+          }
+        })
+        .catch((error) => {
+          console.error("Erreur:", error);
+          resultsDiv.innerHTML =
+            "<p>Erreur lors du chargement des articles.</p>";
         });
-        .catch(error) => console.log.error ("Error lors de l'extraction des cours", error);
-    }
-    function afficherArticles(data)
-    {}
-})() */
+    });
+  });
+});
