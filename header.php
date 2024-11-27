@@ -16,12 +16,21 @@
 
 <body>
     <header class="entete">
+        <?php
+            if (function_exists('the_custom_logo')) {
+            the_custom_logo();
+            }
+            else {
+            echo '<a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
+            }
+        ?>
         <section class="global entete__global">
             <div class="entete__titre">
                 <h1><a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a></h1>
                 <h2><?php bloginfo('description') ?></h2>
                 <p>wraper sans couper le sous titre</p>
-            </div>    
+            </div>  
+            <button id="menu-toggle" aria-expanded="false">☰</button>  
             <div class="entete__nav">
                 <?php wp_nav_menu(
                     array(

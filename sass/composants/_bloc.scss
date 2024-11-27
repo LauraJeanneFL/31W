@@ -1,18 +1,19 @@
 .principal__conteneur {
-     display: grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px; 
     padding: 20px;
-    background-color: rgba(var(--couleur2), 0.2);
 }
 
 .principal__article {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     padding: 20px;
+    flex-grow: 1;
+    flex-basis: 340px;
     background-color: var(--couleur3); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    border-radius: 2px;
 
     &:hover {
         transform: translateY(-5px); 

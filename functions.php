@@ -19,10 +19,16 @@ function ajouter_style()
 // wp_enqueue_scripts = fonctin du script et ajouter_style = execute
 add_action('wp_enqueue_scripts', 'ajouter_style');
 
+// Activer le support des menus personnalisés
 function ajout_options () {
-
     // Activer le support des menus personnalisés
     add_theme_support('menus');
+    add_theme_support('custom-logo', array(
+        'height'      => 250,
+        'width'      => 250,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
 }
 
 add_action("after_setup_theme", "ajout_options");

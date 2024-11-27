@@ -1,5 +1,6 @@
-.entete {
+.entete__global {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: var(--couleur2);
@@ -21,3 +22,9 @@
   color: var(--couleur3);
 }
 
+.custom-logo {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
