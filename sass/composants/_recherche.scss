@@ -1,53 +1,41 @@
-/*
-<?php
-?>
-<form class="recherche" role="search" method="get"  action="<?php echo esc_url( home_url( '/' ) ); ?>">
-  <label>
-    <input class="recherche__input" type="search" class="search-field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" />
-  </label>
-  <button class="recherche__bouton" type="submit" class="search-submit">
-    <img src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="32" height="32">
-  </button>
-</form>
-*/
-
 .recherche {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
   display: flex;
-  max-width: fit-content;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  padding: 6px 4px;
+}
 
-  border: 1px solid rgba(0, 0, 0, 0.8);
+.recherche__input {
+  background-color: rgba(0, 0, 0, 0.01);
+  color: #fff;
+  border: none;
+  height: 1.5rem;
+  font-size: 1.3rem;
+}
+.recherche__input::placeholder {
+  display: block;
+  color: #fff;
+  font-size: 1.1rem;
   padding: 5px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.8);
+  vertical-align: bottom;
+}
 
-  &__input,
-  &__bouton {
-    background-color: rgba(0, 0, 0, 0.3);
-    border: none;
-    outline: none;
-    color: #222;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
+.recherche__input:focus {
+  border: none;
+  outline: none;
+  /* background-color: rgba(0,0,0,0); */
+  background-color: rgba(255, 255, 255, 0.05);
+}
 
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.15);
-    }
+.recherche__bouton {
+  background-color: transparent;
 
-    &:focus {
-      background-color: rgba(0, 0, 0, 0.1);
-      outline: none;
-    }
-     & img {
-        width: 20px; 
-        height: 20px; 
-    }
-  }
-  &__bouton {
-    padding: 2px;
-  }
-
-  &__input::placeholder {
-    color: #666;
-  }
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
 }

@@ -18,6 +18,20 @@
                     <?php wp_nav_menu(array('theme_location' => 'footer-menu', 'menu_class' => 'menu')); ?>
                 </nav>
             </div>
+            <div class="pied__colonne">
+                <h5>Contact</h5>
+                <p>Adresse : <?php echo esc_html(get_theme_mod('footer_address', 'Non défini')); ?></p>
+                <p>Téléphone : <?php echo esc_html(get_theme_mod('footer_phone', 'Non défini')); ?></p>
+                <p>Courriel : <a href="mailto:<?php echo esc_attr(get_theme_mod('footer_email', '')); ?>">
+                    <?php echo esc_html(get_theme_mod('footer_email', 'Non défini')); ?></a>
+                </p>
+            </div>
+        <div class="pied__colonne">
+            <h5>Réseaux sociaux</h5>
+            <div class="pied__socials">
+                <?php echo get_theme_mod('footer_social', ''); ?>
+            </div>
+        </div>
         </div>
     </section>
     <?php wp_footer(); ?>

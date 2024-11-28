@@ -4,20 +4,36 @@
   --couleur3: #ead7c3;
 }
 
-html, 
-body {
-    color: #333;
-    margin: 0;
-    padding: 0;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-}
-
 *{
     box-sizing: border-box;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  display: flex;
+  flex-grow: 1;
+}
+
+.global {
+  background-color: rgba(0, 0, 0, 0.2);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+  flex-grow: 1;
+}
+
 
 a {
   text-decoration: none;
@@ -35,75 +51,78 @@ section > header > * {
   margin-bottom: 20px;
 }
 
-main{
-  display: flex;
-  flex-grow: 1;
-}
-
-.global {
-  background-color: rgba(192, 163, 152, 0.1960784314);
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 20px;
-  flex-grow: 1;
+.principal {
+  background-color: var(--couleur2);
 }
 
 .entete {
   background-color: var(--couleur1)
 }
 
-.pied {
-  background-color: var(--couleur1)
+footer.pied {
+    background-color: var(--couleur1);
+    padding: 20px;
+
+    .pied__conteneur {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    .pied {
+      background-color: var(--couleur1);
+      padding: 20px;
+      border-top: 2px solid var(--couleur2);
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .pied__colonne {
+      flex: 1 1 calc(33.333% - 20px);
+      min-width: 200px;
+
+      & img {
+        width: 10%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      & h5 {
+          font-size: 1.2em;
+          margin-bottom: 10px;
+      }
+
+      & p, a {
+          font-size: 1em;
+          line-height: 1.5;
+      }
+
+      & .pied__socials {
+          display: flex;
+          gap: 10px;
+      }
+    }
+
+    .pied__global {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 20px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
 }
   
 // Utilisation du mixin avec Sass pour colorer les éléments
-@include regle_couleur_avant_arriere(".entete__titre h1 a", $couleur3, $couleur2);
 @include regle_couleur_back(".entete", $couleur1);
-
-.principal {
-  background-color: var(--couleur2);
-}
-
-.pied {
-  background-color: var(--couleur1);
-  padding: 20px;
-  border-top: 2px solid var(--couleur2);
-  color: white;
-  text-transform: uppercase;
-}
-
-.pied__colonne {
-  padding: 10px;
-
-  & img {
-    width: 10%;
-    height: auto;
-    object-fit: cover;
-
-  }
-}
-
-.pied__global {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-top: 20px;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-}
-
-.pied__conteneur {
-  display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-    gap: 40px;
-    align-items: baseline;
-}
-
+@include regle_couleur_back(".principal", $couleur2);
+@include regle_couleur_back(".pied", $couleur3);
 
 
 
