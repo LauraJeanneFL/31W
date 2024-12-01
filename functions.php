@@ -11,7 +11,6 @@ function theme_31w_customize_register($wp_customize)
         'title' => __('Pied de page', 'votre_theme'),
         'priority' => 130,
     ));
-
     // Adresse
     $wp_customize->add_setting('footer_address', array(
         'default' => '',
@@ -22,7 +21,6 @@ function theme_31w_customize_register($wp_customize)
         'section' => 'footer_section',
         'type' => 'text',
     ));
-
     // Téléphone
     $wp_customize->add_setting('footer_phone', array(
         'default' => '',
@@ -33,7 +31,6 @@ function theme_31w_customize_register($wp_customize)
         'section' => 'footer_section',
         'type' => 'text',
     ));
-
     // Courriel
     $wp_customize->add_setting('footer_email', array(
         'default' => '',
@@ -60,16 +57,18 @@ function theme_31w_customize_register($wp_customize)
     $wp_customize->add_section('hero_section', array(
         'title' => __('Hero Section', 'theme_31w'),
         'priority' => 30,
-    )); // Option : Titre principal
+    )); 
+    // Option : Titre principal
     $wp_customize->add_setting('hero_title', array(
-        'default' => __('Bienvenue sur mon site', 'theme_31w'),
+        'default' => __('Bienvenue au Club de Voyage', 'theme_31w'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('hero_title', array(
         'label' => __('Hero Title', 'theme_31w'),
         'section' => 'hero_section',
         'type' => 'text',
-    )); // Option : Sous-titre
+    ));
+    // Option : Sous-titre
     $wp_customize->add_setting('hero_subtitle', array(
         'default' => __('Your success starts here.', 'theme_31w'),
         'sanitize_callback' => 'sanitize_text_field',
@@ -79,7 +78,16 @@ function theme_31w_customize_register($wp_customize)
         'section' => 'hero_section',
         'type' => 'text',
     ));
-
+    // Option : Réseaux sociaux (HTML)
+    $wp_customize->add_setting('hero_social_icons', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('hero_social_icons', array(
+        'label' => __('Icônes des réseaux sociaux (HTML)', 'theme_31w'),
+        'section' => 'hero_section',
+        'type' => 'textarea',
+    ));
     // Option : Image d'arrière-plan
     $wp_customize->add_setting('hero_background', array(
         'default' => '',
@@ -89,7 +97,6 @@ function theme_31w_customize_register($wp_customize)
         'label' => __('Hero Background Image', 'theme_31w'),
         'section' => 'hero_section',
     )));
-
     // Option : Texte du bouton CTA
     $wp_customize->add_setting('hero_cta_text', array(
         'default' => __('Learn More', 'theme_31w'),
@@ -100,7 +107,6 @@ function theme_31w_customize_register($wp_customize)
         'section' => 'hero_section',
         'type' => 'text',
     ));
-
     // Option : Lien du bouton CTA
     $wp_customize->add_setting('hero_cta_link', array(
         'default' => '#',
