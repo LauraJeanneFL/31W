@@ -24,6 +24,9 @@
         <a href="<?php echo esc_url($hero_cta_link); ?>" class="hero__cta">
           <?php echo esc_html($hero_cta_text); ?>
         </a>
+        <div class="hero__socials">
+          <?php echo get_theme_mod('hero_social_icons', ''); ?>
+        </div>
       <?php endif; ?>
     </div>
   </section>
