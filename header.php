@@ -17,14 +17,16 @@
 </head>
 
 <body>
-    <header class="entete">
+    <header class="entete" style="background-image: url('<?php echo esc_url($hero_background); ?>');">
         <section class="global entete__global">
             <div class="entete__titre">
                 <?php if (function_exists('the_custom_logo')) : ?>
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
-                    <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
-                    <h2><?php bloginfo('description'); ?></h2>
+                    <h1 class="site-title">
+                        <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
+                    </h1>
+                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                 <?php endif; ?>
             </div>
             <div class="entete__nav">

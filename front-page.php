@@ -16,20 +16,20 @@
   $hero_cta_text = get_theme_mod('hero_cta_text', 'Learn More');
   $hero_cta_link = get_theme_mod('hero_cta_link', '#'); ?>
 
-  <section class="global hero" style="background-image: url('<?php echo esc_url($hero_background); ?>');">
-    <div class="hero__contenu">
-      <h1><?php echo esc_html($hero_title); ?></h1>
-      <p><?php echo esc_html($hero_subtitle); ?></p>
-      <?php if (!empty($hero_cta_text) && !empty($hero_cta_link)) : ?>
-        <a href="<?php echo esc_url($hero_cta_link); ?>" class="hero__cta">
-          <?php echo esc_html($hero_cta_text); ?>
-        </a>
-        <div class="hero__socials">
-          <?php echo get_theme_mod('hero_social_icons', ''); ?>
-        </div>
-      <?php endif; ?>
-    </div>
+
+  <section class="global hero">
+      <div class="hero__content">
+          <h1><?php echo esc_html($hero_title); ?></h1>
+          <p><?php echo esc_html($hero_subtitle); ?></p>
+          <a href="<?php echo esc_url($hero_cta_link); ?>" class="hero__cta">
+              <?php echo esc_html($hero_cta_text); ?>
+          </a>
+      </div>
+      <div class="hero__socials">
+        <?php echo get_theme_mod('hero_social_icons', ''); ?>
+      </div>
   </section>
+      
 
   <section class="global nouveaute">
     <h2>Liste de cours - Front-page.php</h2>

@@ -175,7 +175,7 @@ function modifie_requete_principal( $query )
   $query->set( 'order', 'ASC' );
   }
 }
- add_action( 'pre_get_posts', 'modifie_requete_principal' );
+add_action( 'pre_get_posts', 'modifie_requete_principal' );
 
 function theme_setup() {
     // Activer les menus personnalisés
@@ -189,10 +189,3 @@ function theme_setup() {
 add_action('after_setup_theme', 'theme_setup'); 
 /////////////////////////////////////////////////////////////////
 
-
-/*
-function ajouter_support_pages() {
-    add_theme_support('post-thumbnails');
-}
-add_action('after_setup_theme', 'ajouter_support_pages');
-*/
