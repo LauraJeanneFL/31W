@@ -93,6 +93,9 @@ function theme_31w_customize_register($wp_customize)
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',
     ));
+
+    $hero_background = get_theme_mod('hero_background', '');
+
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
         'label' => __('Hero Background Image', 'theme_31w'),
         'section' => 'hero_section',
@@ -146,15 +149,16 @@ function ajouter_style()
 add_action('wp_enqueue_scripts', 'ajouter_style');
 
 // Activer le support des menus personnalisés
-function ajout_options () {
+function ajout_options() {
     // Activer le support des menus personnalisés
     add_theme_support('menus');
     add_theme_support('custom-logo', array(
-        'height'      => 300,
-        'width'      => 300,
+        'height'      => 250,
+        'width'      => 250,
         'flex-height' => true,
         'flex-width'  => true,
     ));
+    add_theme_support('post-thumbnails');
 }
 
 add_action("after_setup_theme", "ajout_options");
@@ -167,10 +171,10 @@ add_action("after_setup_theme", "ajout_options");
  * Dans ce cas ci nous filtrons la requête de la page d'accueil
  * @param WP_query  $query la requête principal de WP
  */
-function modifie_requete_principal( $query ) 
+function modifie_requete_principal($query) 
 {
   if ($query->is_home() && $query->is_main_query() && ! is_admin() ) {
-  $query->set( 'category_name', 'nouvelle' );
+  $query->set( 'category_name', 'favorite' );
   $query->set( 'orderby', 'title' );
   $query->set( 'order', 'ASC' );
   }

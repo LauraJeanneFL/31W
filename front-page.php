@@ -9,49 +9,38 @@
 
 <main class="principal">
   <?php
-  // Récupérer les données du Customizer
-  $hero_title = get_theme_mod('hero_title', 'Bienvenue sur mon site');
-  $hero_subtitle = get_theme_mod('hero_subtitle', 'Your success starts here.');
-  $hero_background = get_theme_mod('hero_background', '');
-  $hero_cta_text = get_theme_mod('hero_cta_text', 'Learn More');
-  $hero_cta_link = get_theme_mod('hero_cta_link', '#'); ?>
+    // Récupérer les données du customizer
+    get_template_part('template-parts/customizer', 'hero');
+  ?>
 
-
-  <section class="global hero">
-      <div class="hero__content">
-          <h1><?php echo esc_html($hero_title); ?></h1>
-          <p><?php echo esc_html($hero_subtitle); ?></p>
-          <a href="<?php echo esc_url($hero_cta_link); ?>" class="hero__cta">
-              <?php echo esc_html($hero_cta_text); ?>
-          </a>
-      </div>
-      <div class="hero__socials">
-        <?php echo get_theme_mod('hero_social_icons', ''); ?>
-      </div>
-  </section>
-      
-
-  <section class="global nouveaute">
-    <h2>Liste de cours - Front-page.php</h2>
+  <section class="global nouveau">
+    <h2>Nos destination populaires</h2>
     <div class="principal__conteneur">
       <?php if (have_posts()): ?>
         <?php while (have_posts()) :  the_post(); ?>
-
-          <article class="principal__article">
-            <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-            <p><?php echo wp_trim_words(get_the_excerpt(), 20, null); ?></p>
-          </article>
+          <?php
+          if(in_category('galerie')){
+            get_template_part('template-parts/article', 'galerie');
+          }else {
+            get_template_part('template-parts/article', 'populaire');  
+          } 
+          ?>
         <?php endwhile; ?>
+      <?php endif ?>
     </div>
-  <?php endif ?>
   </section>
 
-  <section id="inscription" class="global inscription"></section>
-
-  <section id="inscription" class="global filtre">
-    <!-- appel a une extension rest api et filtres -->
+  <section class="global galerie">
+    <?php get_template_part('template-parts/customizer', 'galerie'); ?>
   </section>
 
+  <section id="filtre" class="global filtre">
+    <h2>Les destinations par categorie</h2>
+    <!-- Un appel à l'extension res api filtre -->
+     <?php echo do_shortcode('[extraire_destination]');?>
+  </section>
+
+  </section>
 
 </main>
 <?php get_footer() ?>

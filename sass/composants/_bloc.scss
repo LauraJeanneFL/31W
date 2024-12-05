@@ -1,3 +1,9 @@
+/* category.php */
+.principal {
+    display: flex;
+    flex-direction: column;
+}
+
 .principal__conteneur {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
