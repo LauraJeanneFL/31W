@@ -152,7 +152,7 @@ function enqueue_scripts() {
         'burger-menu',
         get_template_directory_uri() . '/js/menu-burger.js',
         array(), 
-        '1.0', 
+        null, 
         true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
@@ -196,8 +196,10 @@ function theme_setup() {
 
     // Enregistrer les emplacements de menu
     register_nav_menus(array(
-        'footer-menu' => __('Footer Menu', 'theme-textdomain'),
+    'principal'   => __('Menu Principal', '31W'),
+    'footer-menu' => __('Footer Menu', '31w'),
     ));
+
 }
 add_action('after_setup_theme', 'theme_setup'); 
 /////////////////////////////////////////////////////////////////

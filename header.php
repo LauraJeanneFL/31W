@@ -16,14 +16,7 @@
         <section class="global entete__global">
             <?php if (function_exists('the_custom_logo')) : ?>
                     <?php the_custom_logo(); ?>
-            <div class="entete__titre">
-                <?php else : ?>
-                    <h1 class="site-title">
-                        <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
-                    </h1>
-                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
-                <?php endif; ?>
-            </div>
+
             <div class="entete__nav">
                 <!-- Bouton Burger -->
                 <div class="burger-menu">
@@ -37,22 +30,28 @@
                 <!-- Menu principal -->
                 <nav class="menu-principal-container">
                     <?php
-                        wp_nav_menu(array(
+                    if (has_nav_menu('principal')) {
+                        wp_nav_menu([
                             'theme_location' => 'principal',
-                            'container' => false,
-                            'menu_class' => 'menu',
-                        ));
-                    ?>
+                            'container'      => false,
+                            'menu_class'     => 'menu',
+                        ]);
+                    } else {
+                        echo '<p style="color:red;">Le menu "principal" n\'est pas configuré. Veuillez l\'assigner dans Apparence > Menus.</p>';
+                    }
+                    ?>  
                 </nav>
-                <!-- Menu de navigation WordPress -->
-                <?php wp_nav_menu(
-                    array(
-                        "menu" => "principal",
-                        "container" => "nav"
-                    )
-                );
-                get_search_form();
-                ?>
+
+                <!-- Formulaire de recherche -->
+                <?php get_search_form(); ?>
+            </div>
+            <div class="entete__titre">
+                <?php else : ?>
+                    <h1 class="site-title">
+                        <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
+                    </h1>
+                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                <?php endif; ?>
             </div>
         </section>
     </header>

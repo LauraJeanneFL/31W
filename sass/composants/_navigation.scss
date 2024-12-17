@@ -19,25 +19,28 @@
   }
 }
 
+//nav
 .menu-principal-container {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+  display: flex; // Caché par défaut
+  flex-direction: row;
+  padding: 1rem;
+  /* display: flex;
+  justify-content: center;
   background-color: var(--couleur2);
-  z-index: 1000;
-  flex-direction: column;
-  padding: 10px;
+  z-index: 1000; */
+
+  &.active {
+    display: flex;
+  }
 
   // ul
   .menu {
     display: flex;
     list-style: none;
-    gap: 5px;
+    gap: 15px;
+    justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
+    gap: 5px;
 
     //li
     .menu-item {
@@ -48,8 +51,8 @@
       a {
         position: relative;
         display: block;
-        padding: 7px;
-        color: black;
+        padding: 10px;
+        color: #333;
         text-decoration: none;
         text-transform: uppercase;
         transition: color 0.4s ease;
@@ -77,60 +80,54 @@
   }
 }
 
-.menu-principal-container.active {
-  display: flex;
-}
-
 .burger {
-  display: none;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
 }
 
 /* Styles pour petits écrans */
 @media (max-width: 768px) {
-  .menu-principal-container {
+  .burger {
     display: flex;
+  }
+
+  .menu-principal-container {
+    display: none;
+
+    & .active {
+      transform: translateX(0);
+    }
+  }
+
+  .menu {
     flex-direction: column;
+    gap: 15px;
     align-items: flex-start;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: auto;
-    width: auto;
-    background-color: transparent;
-    transform: none;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+
+    & .menu-item a {
+      font-size: 1.2em;
+    }
   }
-
-  .menu-principal-container.active {
-    transform: translateX(0);
-  }
-
-  .menu-principal-container .menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .burger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #000;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .burger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .burger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .burger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-
 }
