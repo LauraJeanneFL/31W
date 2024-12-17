@@ -1,11 +1,14 @@
 :root {
-  --couleur1: #a28f948b;
-  --couleur2: #7661678b;
-  --couleur3: #ead7c3;
+  --couleur1: #C15C24;
+  --couleur2: #C38F63;
+  --couleur3: #FECD55;
+  --couleur4: #BAA78A;
+  --couleur5: #352213;
+  //--couleur5: #BAA78A;
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 html,
@@ -21,16 +24,17 @@ body {
   flex-direction: column;
 }
 
-main{
+main {
   display: flex;
   flex-grow: 1;
 }
 
 .global {
-  background-color: rgba(0, 0, 0, 0.2);
-  max-width: 1280px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.184);
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
-
 
 a {
   text-decoration: none;
@@ -53,74 +57,71 @@ section > header > * {
 }
 
 .entete {
-  background-color: var(--couleur1)
+  background-color: var(--couleur1);
 }
 
 footer.pied {
+  background-color: var(--couleur1);
+  padding: 20px;
+
+  .pied__conteneur {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    gap: 20px;
+    align-items: baseline;
+  }
+
+  .pied {
     background-color: var(--couleur1);
     padding: 20px;
+    border-top: 2px solid var(--couleur2);
+    color: white;
+    text-transform: uppercase;
+  }
 
-    .pied__conteneur {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-      gap: 20px;
-      align-items: baseline;
+  .pied__colonne {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 200px;
+
+    & img {
+      width: 10%;
+      height: auto;
+      object-fit: cover;
     }
 
-    .pied {
-      background-color: var(--couleur1);
-      padding: 20px;
-      border-top: 2px solid var(--couleur2);
-      color: white;
-      text-transform: uppercase;
+    & h5 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
     }
 
-    .pied__colonne {
-      flex: 1 1 calc(33.333% - 20px);
-      min-width: 200px;
-
-      & img {
-        width: 10%;
-        height: auto;
-        object-fit: cover;
-      }
-
-      & h5 {
-          font-size: 1.2em;
-          margin-bottom: 10px;
-      }
-
-      & p, a {
-          font-size: 1em;
-          line-height: 1.5;
-      }
-
-      & .pied__socials {
-          display: flex;
-          gap: 10px;
-      }
+    & p,
+    a {
+      font-size: 1em;
+      line-height: 1.5;
     }
 
-    .pied__global {
+    & .pied__socials {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding-top: 20px;
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-around;
-      }
+      gap: 10px;
     }
+  }
+
+  .pied__global {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
 }
-  
+
 // Utilisation du mixin avec Sass pour colorer les éléments
 @include regle_couleur_back(".entete", $couleur1);
 @include regle_couleur_back(".principal", $couleur2);
 @include regle_couleur_back(".pied", $couleur3);
-
-
-
- 

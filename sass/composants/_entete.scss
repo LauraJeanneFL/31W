@@ -1,6 +1,12 @@
 .entete {
-    background-color: #f5f5f5;
-    padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--couleur2);
+  padding: 0px;
+  margin: 0px;
 }
 
 .entete__global {
@@ -9,7 +15,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--couleur2);
-  max-width: 1200px;
+  width: 100%;
 }
 
 .entete__titre h1,
@@ -19,8 +25,11 @@
 
 .entete__nav {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .entete__titre h1 a {
