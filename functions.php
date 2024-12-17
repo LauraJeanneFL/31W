@@ -148,12 +148,22 @@ function ajouter_style()
 // wp_enqueue_scripts = fonctin du script et ajouter_style = execute
 add_action('wp_enqueue_scripts', 'ajouter_style');
 
+function enqueue_scripts() {
+    wp_enqueue_script(
+        'burger-menu',
+        get_template_directory_uri() . '/js/menu-burger.js',
+        array(), 
+        '1.0', 
+        true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_scripts');
+
 // Activer le support des menus personnalisés
 function ajout_options() {
     // Activer le support des menus personnalisés
     add_theme_support('menus');
     add_theme_support('custom-logo', array(
-        'height'      => 250,
+        'height'      => 100,
         'width'      => 250,
         'flex-height' => true,
         'flex-width'  => true,
