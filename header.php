@@ -25,6 +25,26 @@
                 <?php endif; ?>
             </div>
             <div class="entete__nav">
+                <!-- Bouton Burger -->
+                <div class="burger-menu">
+                    <button class="burger" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+                <!-- Menu principal -->
+                <nav class="menu-principal-container">
+                    <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'principal',
+                            'container' => false,
+                            'menu_class' => 'menu',
+                        ));
+                    ?>
+                </nav>
+                <!-- Menu de navigation WordPress -->
                 <?php wp_nav_menu(
                     array(
                         "menu" => "principal",
