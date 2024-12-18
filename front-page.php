@@ -36,10 +36,9 @@
 
   <section id="filtre" class="global filtre">
     <h2>Les destinations par categorie</h2>
-    <!-- Un appel à l'extension res api filtre -->
-     <?php echo do_shortcode('[extraire_destination]');?>
-  </section>
-
+    <!-- Un appel à l'extension REST API filtre -->
+     <!-- <button class="filtrecategorie-button" data-id="1">Catégories:</button> -->
+     <?php echo do_shortcode('[filtre_categorie]'); ?>
   </section>
 
 </main>

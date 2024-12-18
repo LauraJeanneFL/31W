@@ -119,6 +119,25 @@ function theme_31w_customize_register($wp_customize)
         'section' => 'hero_section',
         'type' => 'url',
     ));
+
+    // Section pour la Galerie
+    $wp_customize->add_section('galerie_section', array(
+        'title'    => __('Galerie d\'images', 'theme_31w'),
+        'priority' => 40, // Ajuste la priorité pour placer cette section
+    ));
+
+    // Option : Champ pour les URLs des images
+    $wp_customize->add_setting('galerie_images', array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+
+    $wp_customize->add_control('galerie_images', array(
+        'label'       => __('Galerie d\'images (une URL par ligne)', 'theme_31w'),
+        'description' => __('Ajoutez les URLs des images de votre galerie, une URL par ligne.', 'theme_31w'),
+        'section'     => 'galerie_section',
+        'type'        => 'textarea',
+    ));
 }
 add_action('customize_register', 'theme_31w_customize_register');
 

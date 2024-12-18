@@ -16,4 +16,4 @@ $hero_title = get_theme_mod('hero_title', 'Bienvenue sur mon site');
         </a>
         <?php endif; ?>
     </div>
-</section>>
+</section>
