@@ -320,10 +320,10 @@ template {
 Layout
 **************************************************/
 :root {
-  --couleur1: #C15C24;
-  --couleur2: #C38F63;
-  --couleur3: #FECD55;
-  --couleur4: #BAA78A;
+  --couleur1: #c15c24;
+  --couleur2: #c38f63;
+  --couleur3: #fecd55;
+  --couleur4: #baa78a;
   --couleur5: #352213;
 }
 
@@ -414,6 +414,7 @@ footer.pied .pied__colonne p,
 footer.pied .pied__colonne a {
   font-size: 1em;
   line-height: 1.5;
+  color: var(-- #000);
 }
 footer.pied .pied__colonne .pied__socials {
   display: flex;
@@ -540,7 +541,7 @@ Composant
   position: relative;
   display: block;
   padding: 10px;
-  color: #333;
+  color: var(-- #000);
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.4s ease;
@@ -794,6 +795,21 @@ Composant
     transform: translateY(0);
   }
 }
+.galerie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.galerie-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
 .article__figure {
   margin-bottom: 20px;
 }

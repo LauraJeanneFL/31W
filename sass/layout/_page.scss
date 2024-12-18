@@ -1,8 +1,8 @@
 :root {
-  --couleur1: #C15C24;
-  --couleur2: #C38F63;
-  --couleur3: #FECD55;
-  --couleur4: #BAA78A;
+  --couleur1: #c15c24;
+  --couleur2: #c38f63;
+  --couleur3: #fecd55;
+  --couleur4: #baa78a;
   --couleur5: #352213;
   //--couleur5: #BAA78A;
 }
@@ -30,10 +30,10 @@ main {
 }
 
 .global {
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.184);
-    padding-top: 40px;
-    padding-bottom: 40px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.184);
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 a {
@@ -98,6 +98,7 @@ footer.pied {
     a {
       font-size: 1em;
       line-height: 1.5;
+      color: var(--$couleur6);
     }
 
     & .pied__socials {
