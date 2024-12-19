@@ -1,56 +1,29 @@
-# Projet de session du cours 31W
+# Épreuve finale du cours de 31W – Introduction à un système de gestion de contenu
 
-## Exercice-1
+Durée de l’épreuve : 3 heures  
+Compte pour 25% de la note globale du cours
 
-## Introduction à un système de gestion de contenu
+## Objectifs :  Utilisez la structure de thème de votre TP2 pour réaliser le développement de l’épreuve finale. Assurez-vous que votre pied de page contienne deux liens github :
 
-### Les objectifs du thème
+- Un lien vers votre nouvelle branche « ef » de votre thème.
+- Un lien vers le dépôt de l’extension « pays »
 
-- Vous aider à réaliser votre propre thème
-- Documenter les concepts de base
-- Ajouter les références qui ont permis de solutionner certains problèmes
+ Il s’agira de créer une nouvelle page basée sur le modèle « template-pays » qui affichera les destinations par pays. Cette page sera partagée en deux sections :
 
-## Exercice-2
+## Section 1
 
-### objectif : Réaliser un thème de base
+L’entête de la page contiendra un titre,  une courte introduction, une galerie d’images de différentes destinations, un carrousel qui s’activera en cliquant sur une image de la galerie. Le nombre de personnes qui voyage ensemble, la date du départ et la date de retour.
 
-- Améliorer la structure Sass
-- Créer une page d'accueil avec front-page.php
+## Section 2
 
-- Auteur : Eddy Martin
-- Adresse URL du site sur WHC : <https://gftnth00.mywhc.ca/31w13/>
+Une série de liens ou boutons contenant chacun un pays. Chaque lien permet d’exécuter une requête HTTPS permettant d’afficher les destinations par pays. Les pays que l’on peut sélectionner sont les suivants :     "France","États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"
+Cette application sera intégrée à partir d’une extension que vous allez créer et qui ressemble beaucoup à l’extension filtre du TP2 permettant d’extraire les destinations par catégorie. Cette fois vous allez créer une extension qui permet d’extraire les destinations par pays.
+Utiliser la requête rest-api suivante pour extraire les destinations par pays :
+Cette instruction permet d’extraire l’adresse du domaine
+window.location.origin + "/31w"; // pour ajouter un dossier au domaine
+/wp-json/wp/v2/posts?search=canada&per_page=30 // la requête rest
 
-## Exercice-3
+### Remarques importantes
 
-### objectif : Adapter la requête principale
-
-- Améliorer le thème existant
-- Améliorer le modèle front-page.php
-- Ajouter les modèles category-cours.php et 404.php
-- Ajouter un champ personnalisé aux articles de catégorie « Cours »
-- Ajouter de nouvelles règles de style dans le dossier Sass
-- Utilisation des variables CSS/Sass
-- Utilisation/ajout de « Mixin »
-- Améliorer le design général du thème
-
-### Exercice-4
-
-### Objectifs: Filtre utilisant REST API de WP
-
-1. Introduire les notions de REST API
-
-2. Écrire une extension qui permettra de filtrer les articles par catégories
-
-3. L’extension pourra être utilisé dans n’importe quel modèle
-
-Extension filtrepost
-
-1. Permettra d’être utilisé à partir
-
-a. d’un modèle
-
-b. d’un article
-
-c. d’une page
-
-Un minimum de 5 commits permettront d'évaluer l'évolution de votre projet.
+Fraude et plagiat (PDEA)
+La fraude ou le plagiat entraînent la note zéro (0) pour l’épreuve finale. La participation ou la collaboration au plagiat peuvent également entraîner la note zéro (0). Les sanctions institutionnelles qui peuvent être appliquées dans les cas de fraude et plagiat, ainsi que les recours possibles pour l'étudiant, peuvent être consultées à partir d'Omnivox dans la section « Documents de référence».
