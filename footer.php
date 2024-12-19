@@ -32,6 +32,13 @@
                 <?php echo get_theme_mod('footer_social', ''); ?>
             </div>
         </div>
+
+        <div class="pied__colonne">
+            <p>
+                <a href="https://github.com/LauraJeanneFL/31W/tree/ef" target="_blank">Thème EF</a> |
+                <a href="https://github.com/LauraJeanneFL/filtre-pays" target="_blank">Plugin Filtre-Pays</a>
+            </p>
+        </div>
         </div>
     </section>
     <?php wp_footer(); ?>
