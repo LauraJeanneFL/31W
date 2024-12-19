@@ -478,7 +478,9 @@ Composant
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-.principal__article h5, .principal__article h6, .principal__article p {
+.principal__article h5,
+.principal__article h6,
+.principal__article p {
   margin: 0 0 10px 0;
 }
 .principal__article h5 {
@@ -492,8 +494,61 @@ Composant
 }
 .principal__article a:hover {
   text-decoration: underline;
+  color: var(--couleur2);
 }
 
+.conteneur__centre {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.resultats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pays-button {
+  padding: 10px 20px;
+  background-color: var(--couleur3);
+  border: 1px solid var(--couleur2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.pays-button:hover {
+  background-color: var(--couleur2);
+  color: white;
+}
+
+.pays-button.active {
+  background-color: var(--couleur2);
+  color: white;
+  transform: scale(1.1);
+}
+
+.resultats article {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /*
 <nav class="menu-principal-container"><ul id="menu-principal" class="menu"><li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-58"><a href="http://localhost/31W/index.php/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche et préparation au marché du travail</a></li>
 <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-59"><a href="http://localhost/31W/index.php/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation et interactivité en jeu</a></li>
@@ -798,16 +853,23 @@ Composant
 .galerie-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 1200px;
 }
 
 .galerie-item img {
   width: 100%;
-  height: auto;
+  height: 150px;
   object-fit: cover;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.galerie-item img:hover {
+  transform: scale(1.05);
+  border-color: var(--couleur2);
 }
 
 .article__figure {
