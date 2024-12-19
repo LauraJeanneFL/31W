@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Carrousel
+ * Template Name: nouvelle-page-carrousel
  */
 get_header(); ?>
 
