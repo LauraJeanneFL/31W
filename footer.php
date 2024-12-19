@@ -35,8 +35,8 @@
 
         <div class="pied__colonne">
             <p>
-                <a href="https://github.com/LauraJeanneFL/31W/tree/ef" target="_blank">Thème EF</a> |
-                <a href="https://github.com/LauraJeanneFL/filtre-pays" target="_blank">Plugin Filtre-Pays</a>
+                <a href="https://github.com/LauraJeanneFL/31W/tree/ef">Thème EF</a> 
+                <a href="https://github.com/LauraJeanneFL/filtre-pays">Plugin Filtre-Pays</a>
             </p>
         </div>
         </div>
