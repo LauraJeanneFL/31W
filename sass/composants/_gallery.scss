@@ -1,9 +1,13 @@
 .galerie-container {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  /*  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin: 20px auto;
-  max-width: 1200px;
+  max-width: 1200px; */
 }
 
 .galerie-item img {
