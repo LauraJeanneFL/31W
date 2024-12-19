@@ -25,6 +25,12 @@ get_header();
             <!-- Boutons pour les pays ici -->
         </div>
     </section>
+
+    <div class="trip-info">
+        <p><strong>Participants :</strong> <?php echo get_post_meta(get_the_ID(), '_participants', true); ?></p>
+        <p><strong>Date de départ :</strong> <?php echo get_post_meta(get_the_ID(), '_depart', true); ?></p>
+        <p><strong>Date de retour :</strong> <?php echo get_post_meta(get_the_ID(), '_retour', true); ?></p>
+    </div>
 </div>
 
 <?php

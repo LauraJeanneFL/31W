@@ -221,5 +221,48 @@ function theme_setup() {
 
 }
 add_action('after_setup_theme', 'theme_setup'); 
-/////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+
+function pays_meta_boxes() {
+    add_meta_box(
+        'pays_meta',
+        'Informations sur le voyage',
+        'render_pays_meta_boxes',
+        'page',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'pays_meta_boxes');
+
+function render_pays_meta_boxes($post) {
+    $participants = get_post_meta($post->ID, '_participants', true);
+    $depart = get_post_meta($post->ID, '_depart', true);
+    $retour = get_post_meta($post->ID, '_retour', true);
+    ?>
+    <label for="participants">Nombre de participants :</label>
+    <input type="number" id="participants" name="participants" value="<?php echo esc_attr($participants); ?>" />
+
+    <label for="depart">Date de départ :</label>
+    <input type="date" id="depart" name="depart" value="<?php echo esc_attr($depart); ?>" />
+
+    <label for="retour">Date de retour :</label>
+    <input type="date" id="retour" name="retour" value="<?php echo esc_attr($retour); ?>" />
+    <?php
+}
+
+function save_pays_meta_boxes($post_id) {
+    if (array_key_exists('participants', $_POST)) {
+        update_post_meta($post_id, '_participants', $_POST['participants']);
+    }
+    if (array_key_exists('depart', $_POST)) {
+        update_post_meta($post_id, '_depart', $_POST['depart']);
+    }
+    if (array_key_exists('retour', $_POST)) {
+        update_post_meta($post_id, '_retour', $_POST['retour']);
+    }
+}
+add_action('save_post', 'save_pays_meta_boxes');
