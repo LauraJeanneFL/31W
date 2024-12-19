@@ -5,7 +5,9 @@
                 <h5>Informations du cours</h5>
                 <p>Titre du travail : Création d'un thème WordPress</p>
                 <p>Auteur : Laura-Jeanne Fournier Lanctôt</p>
-                <p><a href="https://github.com/LauraJeanneFL/31W" target="_blank">Lien vers le dépôt GitHub</a></p>
+                <p><a href="https://github.com/LauraJeanneFL/31W/tree/ef" target="_blank">Lien vers le dépôt GitHub pour l'épreuve finale</a> </p>
+                <p><a href="https://github.com/LauraJeanneFL/filtre-pays" target="_blank">Lien vers le dépôt GitHub Plugin Filtre-Pays</a></p>
+                <p><a href="https://github.com/LauraJeanneFL/31W" target="_blank">Lien vers le dépôt GitHub complet</a></p>
             </div>
             <div class="pied__colonne">
                 <h5>Objectif de l’exercice</h5>
@@ -33,12 +35,7 @@
             </div>
         </div>
 
-        <div class="pied__colonne">
-            <p>
-                <a href="https://github.com/LauraJeanneFL/31W/tree/ef" target="_blank">Thème EF</a> 
-                <a href="https://github.com/LauraJeanneFL/filtre-pays" target="_blank">Plugin Filtre-Pays</a>
-            </p>
-        </div>
+      
         </div>
     </section>
     <?php wp_footer(); ?>
