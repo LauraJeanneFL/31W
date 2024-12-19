@@ -1,10 +1,8 @@
 <?php
-/*
-Customize Name: customizer-galerie
-*/
+// Récupérer les URLs des images depuis le Customizer
 $galerie_images = get_theme_mod('galerie_images', '');
 
-// Vérifie si des images sont définies
+// Vérifier si des images sont définies
 if ($galerie_images) {
     $images = explode("\n", trim($galerie_images));
     echo '<div class="galerie-container">';
@@ -17,3 +15,4 @@ if ($galerie_images) {
 } else {
     echo '<p>Aucune image n\'a été ajoutée à la galerie pour le moment.</p>';
 }
+?>
