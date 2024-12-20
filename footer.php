@@ -26,12 +26,12 @@
                     <?php echo esc_html(get_theme_mod('footer_email', 'Non défini')); ?></a>
                 </p>
             </div>
-        <div class="pied__colonne">
-            <h5>Réseaux sociaux</h5>
-            <div class="pied__socials">
-                <?php echo get_theme_mod('footer_social', ''); ?>
+            <div class="pied__colonne">
+                <h5>Réseaux sociaux</h5>
+                <div class="pied__socials">
+                    <?php echo get_theme_mod('footer_social', ''); ?>
+                </div>
             </div>
-        </div>
         </div>
     </section>
     <?php wp_footer(); ?>
