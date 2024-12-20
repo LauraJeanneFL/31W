@@ -29,7 +29,32 @@
             <div class="pied__colonne">
                 <h5>Réseaux sociaux</h5>
                 <div class="pied__socials">
-                    <?php echo get_theme_mod('footer_social', ''); ?>
+                    <?php 
+                    $social_networks = ['facebook', 'twitter', 'instagram', 'linkedin'];
+                    foreach ($social_networks as $network) {
+                        $url = get_theme_mod("footer_social_$network");
+                        if ($url) {
+                            echo "<a href='" . esc_url($url) . "' target='_blank' rel='noopener'>
+                                <i class='fab fa-$network'></i>
+                            </a>";
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <div class="pied__colonne">
+                <div class="footer__tourisme">
+                    <h5><?php _e('Liens Tourisme', 'theme_31w'); ?></h5>
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'menu_tourisme',
+                        'container'      => 'nav',
+                        'container_class' => 'tourisme-nav',
+                        'menu_class'     => 'tourisme-menu',
+                        'fallback_cb'    => false,
+                    ));
+                    ?>
                 </div>
             </div>
         </div>

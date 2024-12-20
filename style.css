@@ -351,7 +351,6 @@ main {
 
 .global {
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.184);
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -488,16 +487,18 @@ Composant
   padding: 20px;
   flex-grow: 1;
   flex-basis: 340px;
-  background-color: var(--couleur3);
+  background-color: var(--couleur1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .principal__article:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-.principal__article h5, .principal__article h6, .principal__article p {
+.principal__article h5,
+.principal__article h6,
+.principal__article p {
   margin: 0 0 10px 0;
 }
 .principal__article h5 {
@@ -525,7 +526,8 @@ Composant
   gap: 10px;
 }
 
-.signup-form input, .signup-form button {
+.signup-form input,
+.signup-form button {
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -533,14 +535,14 @@ Composant
 }
 
 .signup-form button {
-  background-color: #0073e6;
+  background-color: var(--couleur1);
   color: white;
   cursor: pointer;
   border: none;
 }
 
 .signup-form button:hover {
-  background-color: #005bb5;
+  background-color: var(--couleur5);
 }
 
 /*
@@ -865,6 +867,18 @@ Composant
 .article__figure img {
   width: 100%;
   height: auto;
+}
+
+.details-destination {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.details-destination p {
+  margin: 5px 0;
 }
 
 /*************************************************

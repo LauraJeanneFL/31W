@@ -12,6 +12,15 @@
     // Récupérer les données du customizer
     get_template_part('template-parts/customizer', 'hero');
   ?>
+  
+  <div class="signup-form">
+    <h3>Inscrivez-vous à notre newsletter</h3>
+    <form action="<?php echo esc_url(home_url('/')); ?>" method="post">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+  </div>
 
   <section class="global nouveau">
     <h2>Nos destination populaires</h2>
@@ -40,15 +49,6 @@
      <!-- <button class="filtrecategorie-button" data-id="1">Catégories:</button> -->
      <?php echo do_shortcode('[filtre_categorie]'); ?>
   </section>
-
-  <div class="signup-form">
-    <h3>Inscrivez-vous à notre newsletter</h3>
-    <form action="<?php echo esc_url(home_url('/')); ?>" method="post">
-        <input type="text" name="nom" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre email" required>
-        <button type="submit">S'inscrire</button>
-    </form>
-  </div>
 
 </main>
 <?php get_footer() ?>

@@ -42,15 +42,19 @@ function theme_31w_customize_register($wp_customize)
     ));
 
     // Réseaux sociaux
-    $wp_customize->add_setting('footer_social', array(
-        'default' => '',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('footer_social', array(
-        'label' => __('Liens des réseaux sociaux (HTML)', 'votre_theme'),
-        'section' => 'footer_section',
-        'type' => 'textarea',
-    ));
+    $social_networks = ['Facebook', 'Twitter', 'Instagram', 'LinkedIn'];
+    foreach ($social_networks as $network) {
+        $key = strtolower($network);
+        $wp_customize->add_setting("footer_social_$key", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control("footer_social_$key", array(
+            'label' => __("Lien $network", 'votre_theme'),
+            'section' => 'footer_section',
+            'type' => 'url',
+        ));
+    }
     
     // Section pour la zone Hero
     $wp_customize->add_section('hero_section', array(
@@ -145,7 +149,6 @@ add_action('customize_register', 'theme_31w_customize_register');
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
-
 // Ajouter le style sur la page
 // Ajouter le link css dans la page 
 // Premier qui s'execute !
@@ -221,5 +224,105 @@ function theme_setup() {
 
 }
 add_action('after_setup_theme', 'theme_setup'); 
+
+/////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
 
+
+function enqueue_theme_carousel_scripts()  {
+    if (is_page('galerie-dimages-nos-destinations')) { //Slug de ma page 
+        wp_enqueue_script(
+            'carrousel-js', 
+            get_template_directory_uri() . '/js/carrousel.js', 
+            array('jquery'), 
+            '1.0', true);
+        
+        wp_enqueue_style(
+            'carrousel-style', 
+            get_template_directory_uri() . '/css/carrousel.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_carousel_scripts');
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+// Intégrer bibliothèque d’icônes:  Font Awesome
+function enqueue_font_awesome() {
+    wp_enqueue_style(
+        'font-awesome', 
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
+        array(), 
+          '6.0.0');
+}
+add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
+
+
+function ajouter_metabox_destinations() {
+    add_meta_box(
+        'details_destination', // ID unique de la métabox
+        'Détails de la Destination', // Titre de la métabox
+        'afficher_metabox_destination', // Fonction d'affichage
+        'post', // Type de contenu : post ou custom post type
+        'normal', // Emplacement
+        'default' // Priorité
+    );
+}
+add_action('add_meta_boxes', 'ajouter_metabox_destinations');
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+// Zone de menu spécifique pour ces liens externes
+function enregistrer_menus_tourisme() {
+    register_nav_menus(array(
+        'menu_tourisme' => __('Liens Tourisme', 'theme_31w'),
+    ));
+}
+add_action('after_setup_theme', 'enregistrer_menus_tourisme');
+
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+// Ajouter les champs personnalisés via le métabox
+function afficher_metabox_destination($post) {
+    // Récupérer les valeurs actuelles
+    $temp_min = get_post_meta($post->ID, '_temp_min', true);
+    $temp_max = get_post_meta($post->ID, '_temp_max', true);
+    $dates_ideales = get_post_meta($post->ID, '_dates_ideales', true);
+
+    // Afficher les champs
+    echo '<label for="temp_min">Température Minimum :</label>';
+    echo '<input type="number" id="temp_min" name="temp_min" value="' . esc_attr($temp_min) . '" placeholder="Exemple : -5">';
+
+    echo '<label for="temp_max">Température Maximum :</label>';
+    echo '<input type="number" id="temp_max" name="temp_max" value="' . esc_attr($temp_max) . '" placeholder="Exemple : 25">';
+
+    echo '<label for="dates_ideales">Dates Idéales :</label>';
+    echo '<input type="text" id="dates_ideales" name="dates_ideales" value="' . esc_attr($dates_ideales) . '" placeholder="Exemple : Juin - Août">';
+}
+
+function sauvegarder_metabox_destinations($post_id) {
+    // Vérifier que ce n'est pas une sauvegarde automatique
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    // Vérifier les permissions
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    // Sauvegarder les valeurs
+    if (isset($_POST['temp_min'])) {
+        update_post_meta($post_id, '_temp_min', sanitize_text_field($_POST['temp_min']));
+    }
+    if (isset($_POST['temp_max'])) {
+        update_post_meta($post_id, '_temp_max', sanitize_text_field($_POST['temp_max']));
+    }
+    if (isset($_POST['dates_ideales'])) {
+        update_post_meta($post_id, '_dates_ideales', sanitize_text_field($_POST['dates_ideales']));
+    }
+}
+add_action('save_post', 'sauvegarder_metabox_destinations');
