@@ -435,6 +435,25 @@ footer.pied .pied__global {
   }
 }
 
+.page-404 {
+  text-align: center;
+  padding: 50px;
+}
+
+.page-404 .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #0073e6;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.page-404 .btn:hover {
+  background-color: #005bb5;
+}
+
 .entete {
   background-color: var(rgba(162, 143, 148, 0.5450980392));
 }
@@ -492,6 +511,36 @@ Composant
 }
 .principal__article a:hover {
   text-decoration: underline;
+}
+
+.signup-form {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.signup-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup-form input, .signup-form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.signup-form button {
+  background-color: #0073e6;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.signup-form button:hover {
+  background-color: #005bb5;
 }
 
 /*
