@@ -46,3 +46,32 @@
     }
 }
 
+.signup-form {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signup-form input, .signup-form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    background-color: #0073e6;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.signup-form button:hover {
+    background-color: #005bb5;
+}
