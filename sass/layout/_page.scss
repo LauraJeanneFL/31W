@@ -122,6 +122,25 @@ footer.pied {
   }
 }
 
+.page-404 {
+    text-align: center;
+    padding: 50px;
+}
+
+.page-404 .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #0073e6;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.page-404 .btn:hover {
+    background-color: #005bb5;
+}
+
 // Utilisation du mixin avec Sass pour colorer les éléments
 @include regle_couleur_back(".entete", $couleur1);
 @include regle_couleur_back(".principal", $couleur2);
