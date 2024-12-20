@@ -8,8 +8,9 @@
 
 <main class="principal">
   <section class="global">
-    <h1>Erreur 404 - Page non trouvée</h1>
-    <p>Voici une liste de cours disponibles :</p>
+    <h1>Erreur 404 : Page non trouvée</h1>
+    <p>Désolé, la page que vous cherchez n'existe pas ou a été déplacée.</p>
+    <a href="<?php echo home_url(); ?>" class="btn">Retour à l'accueil</a>
     <div class="principal__conteneur">
       <?php
             $args = array(
