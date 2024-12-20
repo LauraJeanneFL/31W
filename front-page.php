@@ -41,5 +41,14 @@
      <?php echo do_shortcode('[filtre_categorie]'); ?>
   </section>
 
+  <div class="signup-form">
+    <h3>Inscrivez-vous à notre newsletter</h3>
+    <form action="<?php echo esc_url(home_url('/')); ?>" method="post">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+  </div>
+
 </main>
 <?php get_footer() ?>
